@@ -17,7 +17,7 @@ class SiteController extends CI_Controller
     }
 
     public function createReturnArray($section, $data){
-
+        return array('section' => $section, 'content' => array($data));
     }
 
     public function objectToArray($data){
@@ -25,17 +25,16 @@ class SiteController extends CI_Controller
     }
     public function getAllSiteData(){
         $siteData = array();
-        $defaultColumns = array('section', 'title', 'body', 'image');
-        $contactColumns = array('telephone', 'mobile', 'email', 'address');
-
-        $arrHomeDetail = $this->objectToArray($this->site_model->selectHomeData());
-        $homeData = $this->assignDataToArray('home', $arrHomeDetail, $defaultColumns);
         
-        $arrContactDetail = $this->objectToArray($this->site_model->selectContactData());
-        $contactData = $this->assignDataToArray('contact', $arrContactDetail, $contactColumns);
+        $arrHomeDetail = $this->site_model->selectHomeData();
+        $homeData = $this->createReturnArray('home', $arrHomeDetail);
+        $arrContactDetail = $this->site_model->selectContactData();
+        $contactData = $this->createReturnArray('contact', $arrContactDetail);
         
         array_push($siteData, $homeData);
+        array_push($siteData, array());
         array_push($siteData, $contactData);
+        
         echo json_encode($siteData);
     }
 }
