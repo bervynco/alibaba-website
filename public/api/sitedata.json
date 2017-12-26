@@ -1,0 +1,120 @@
+[{
+        "section": "home",
+        "content": [{
+                "title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION",
+                "body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas”.",
+                "image": "assets/img/logo/default/placeholder.png"
+            }
+        ]
+    },
+    {
+        "section": "about",
+        "content": [{
+                "title": "what we offer",
+                "link": "products",
+                "body": [{
+                        "name": "Alibaba Corn Chips",
+                        "description": "",
+                        "image": "assets/img/logo/default/placeholder.png"
+                    },
+                    {
+                        "name": "BNB Cornick",
+                        "description": "",
+                        "image": "assets/img/logo/default/placeholder.png"
+                    },
+                    {
+                        "name": "BNB Green Peas",
+                        "description": "",
+                        "image": "assets/img/logo/default/placeholder.png"
+                    }
+                ]
+            },
+            {
+                "title": "how we do things",
+                "link": "process",
+                "body": [{
+                        "name": "Raw Materials",
+                        "description": "Only selected finest corn, fresh from harvest is used to manufacture our products. We now produce 50,000 kg of sweet yellow corn and 20,000 kgs of white corn, daily.",
+                        "image": "assets/img/logo/default/placeholder.png",
+                        "steps": [{
+                            "name": "",
+                            "description": "",
+                            "sub": ["Yellow Corn", "White Corn", "Palm Oil / Coco Oil", "Garlic", "Green Peas", "Lime", "Flavorings"],
+                            "image": ""
+                            }]
+                    },
+                    {
+                        "name": "Corn Cooking and Washing",
+                        "description": "Rice Husk is used as fuel to Boiler that would generate the heat required for Cooking. As responsible citizen of the planet, the company uses only ZERO Carbon Foot print fuel.",
+                        "image": "assets/img/logo/default/placeholder.png",
+                        "steps": [{
+                            "name": "",
+                            "description": "Corn is cooked together with lime,  to gelatinize its starch , remove the corn skin and sanitized using lime. It is then washed to clean ready for grinding corn.",
+                            "sub": [],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        },{
+                            "name": "Sheeter",
+                            "description": "",
+                            "sub": ["Line 1: 1,000 KG/HOUR", "Line 1: 1,200 KG/HOUR"],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        },{
+                            "name": "Frier",
+                            "description": "German Brand: Burner",
+                            "sub": ["Fully Automated", "Horizontal Burner", "Fuel: LPG"],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        }]
+                    },
+                    {
+                        "name": "Packing and Storage",
+                        "description": "Warehouse Management is strictly enforced to sustain FIFO. Manually and carefully packed into bundles by highly skilled and trained workers.",
+                        "image": "assets/img/logo/default/placeholder.png",
+                        "steps": [{
+                            "name": "Small Packing Machine",
+                            "description": "120 Units ",
+                            "sub": ["Packing Capacity: 120 units X 50packs/hr = 6000 packs / hour", "PrecisionTechnology"],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        },{
+                            "name": "Ishida Weigher",
+                            "description": "10 Units",
+                            "sub": ["Packing Capacity: 60packs / hr x 10 units = 600 pack / hour", "Horizontal Burner", "Fully Automated", "Highly Reliable Machine", "99.99% Weight Accuracy"],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        }]
+                    },
+                    {
+                        "name": "Loading",
+                        "description": "",
+                        "image": "assets/img/logo/default/placeholder.png",
+                        "steps": [{
+                            "name": "",
+                            "description": "Loading is done systematically, to preserve products and  achieve OTIF at all times.",
+                            "sub": [],
+                            "image": "assets/img/logo/default/placeholder.png"
+                        }]
+                    }
+                ]
+            },
+            {
+                "title": "our vision",
+                "link": "vision",
+                "body": [{
+                    "name": "vision",
+                    "description": "To be the Supplier of choice who can make available the highest quality products and services that will meet up our customer’s expectations while we are continuously improving and civilizing our manufacturing processes.",
+                    "image": "assets/img/logo/default/placeholder.png"
+                }, {
+                    "name": "mission",
+                    "description": "To start-up and establish a wide-ranging presence and set point of reference for a manufacturing company by implementing constant development in work standard to provide the utmost customer satisfaction, taking on-board the top and foremost course of action, quality and ethical standards, and establishing a long-term connection value, both to our internal and external customers as we deliver our products and services on time and on budget.",
+                    "image": "assets/img/logo/default/placeholder.png"
+                }]
+            }
+        ]
+    },
+    {
+        "section": "contact",
+        "content": [{
+            "telephone": "+63 2 5422842 / +63 2 5422847",
+            "mobile": "+63 9178001968",
+            "email": "fdsf_faam@yahoo.com",
+            "address": "#138 BO. Masagana, Pandi, Bulacan, Philippines"
+        }]
+    }
+]

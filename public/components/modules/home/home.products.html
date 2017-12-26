@@ -1,0 +1,27 @@
+<div class="site-drilldown wrapper">
+    <div class="content">
+        <div class="layer-content" flex layout="column" layout-align>
+            <div class="header element-fixed" flex="20" layout="column" layout-align>
+                <div flex layout layout-align="center center"><span>{{DrilldownData.title}}</span></div>
+                <div class="filter" flex="40" layout layout-align="center center">
+                    <input class="filter-input" type="text" ng-model="ProductSearchInput" placeholder="Search" />
+                </div>
+                <div flex="5"></div>
+            </div>
+            <div class="body" flex layout="column" layout-align>
+                <div class="" flex="80" layout layout-align>
+                    <div class="product-list" flex layout layout-align ng-if="DrilldownData.body.length!=0">
+                        <md-grid-list class="product" flex layout layout-align class md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="3" md-cols-lg="4" md-cols="4" md-row-height="300px" md-gutter="10px">
+                            <md-grid-tile ng-repeat="data in DrilldownData.body | filter:ProductSearch">
+                                <md-grid-tile-footer flex layout layout-align="center center" <span layout layout-align>{{data.name}}</span>
+                                </md-grid-tile-footer>
+                                <div class="product-content" ng-style="{'background-image': 'url({{data.image}})'}" flex layout="column" layout-align></div>
+                            </md-grid-tile>
+                        </md-grid-list>
+                    </div>
+                    <div class="list-item" flex layout layout-align="center center" ng-if="DrilldownData.body.length==0"><span class="subtle">No Data</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
