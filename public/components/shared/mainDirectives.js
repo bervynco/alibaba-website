@@ -14,7 +14,7 @@ app.directive("navigation", function () {
         link: function (scope, element, attrs) {
         },
         templateUrl: function (scope, element, attrs) {
-            return 'components/shared/template/navigation/navigation.html'
+            return 'public/components/shared/template/navigation/navigation.html'
         }
     }
 });
@@ -32,7 +32,7 @@ app.directive("footer", function () {
         },
         templateUrl: function (scope, element, attrs) {
             //return attrs.templateUrl || 'components/shared/template/navigation/header.html'
-            return 'components/shared/template/navigation/footer.html'
+            return 'public/components/shared/template/navigation/footer.html'
         }
     }
 });
