@@ -12,7 +12,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "",
 			data: {},
 			url: "/auth",
-			templateUrl: "public/components/modules/auth/auth.html",
+			templateUrl: "components/modules/auth/auth.html",
 			controller: "MainController"
 		})
 		.state("site", {
@@ -24,7 +24,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "site",
 			data: {},
 			url: "/settings",
-			templateUrl: "public/components/modules/settings/settings.html",
+			templateUrl: "components/modules/settings/settings.html",
 			controller: "SettingsController"
 		})
 		.state("home", {
@@ -32,7 +32,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "site",
 			data: {},
 			url: "/home",
-			templateUrl: "public/components/modules/home/home.landing.html",
+			templateUrl: "components/modules/home/home.landing.html",
 			controller: "HomeController",
 			resolve: {
 				siteData: "HomeFactory"
@@ -43,7 +43,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "site",
 			data: {},
 			url: "/home/products",
-			templateUrl: "public/components/modules/home/home.products.html",
+			templateUrl: "components/modules/home/home.products.html",
 			controller: "ProductsController",
 			resolve: {
 				productsData: ["DrilldownFactory", function(DrilldownFactory){
@@ -56,7 +56,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "site",
 			data: {},
 			url: "/home/process",
-			templateUrl: "public/components/modules/home/home.process.html",
+			templateUrl: "components/modules/home/home.process.html",
 			controller: "ProcessController",
 			resolve: {
 				processData: ["DrilldownFactory", function(DrilldownFactory){
@@ -69,7 +69,7 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "site",
 			data: {},
 			url: "/home/vision",
-			templateUrl: "public/components/modules/home/home.vision.html",
+			templateUrl: "components/modules/home/home.vision.html",
 			controller: "VisionController",
 			resolve: {
 				visionData: ["DrilldownFactory", function(DrilldownFactory){

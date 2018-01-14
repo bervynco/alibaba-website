@@ -11,8 +11,6 @@
 	<!-------------------------------------------------------------------------------------->
 
 	<link rel="stylesheet" href="public/assets/css/main.css">
-	<link rel="stylesheet" href="public/assets/css/animation-override.css">
-	<link rel="stylesheet" href="public/assets/css/highchart-override.css">
 	<link rel="stylesheet" href="public/assets/css/material-override.css">
 
 	<!-------------------------------------------------------------------------------------->
@@ -72,7 +70,7 @@
 	<script src="public/components/shared/mainRouter.js"></script>
 
 	<!-------------------------------------------------------------------------------------->
-	<!----------------------------------    public/components    ---------------------------------->
+	<!-------------------------------    public/components    ------------------------------>
 	<!-------------------------------------------------------------------------------------->
 
 	<!-- AUTH -->

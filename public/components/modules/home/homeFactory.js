@@ -2,7 +2,6 @@ homeModule.factory('HomeFactory', function($http, HomeService) {
     var siteData = {};
     var getData = function() {
         return HomeService.GetData().then(function(response) {
-            console.log(response.data);
             return angular.extend(siteData, response.data);
         })
     }
@@ -23,8 +22,7 @@ homeModule.factory('DrilldownFactory', function($http, $location, HomeService) {
 homeModule.service('HomeService', function($http, $window) {
     this.GetData = function() {
         return $http({
-            // url: "public/api/sitedata.json",
-            url: "index.php/SiteController/getAllSiteData",
+            url: "api/sitedata.json",
             method: 'GET'
         });
     }

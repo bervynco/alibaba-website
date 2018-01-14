@@ -14,7 +14,7 @@ app.directive("navigation", function () {
         link: function (scope, element, attrs) {
         },
         templateUrl: function (scope, element, attrs) {
-            return 'public/components/shared/template/navigation/navigation.html'
+            return 'components/shared/template/navigation/navigation.html'
         }
     }
 });
@@ -31,8 +31,8 @@ app.directive("footer", function () {
 
         },
         templateUrl: function (scope, element, attrs) {
-            //return attrs.templateUrl || 'public/public/components/shared/template/navigation/header.html'
-            return 'public/public/components/shared/template/navigation/footer.html'
+            //return attrs.templateUrl || 'components/shared/template/navigation/header.html'
+            return 'components/shared/template/navigation/footer.html'
         }
     }
 });

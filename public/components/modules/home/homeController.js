@@ -15,7 +15,7 @@ homeModule.controller('ProductsController', function($location,$scope,$state,$st
 		if ($scope.ProductSearchInput == undefined)
 			return true;
 		else {
-			if (item.name.toLowerCase().indexOf($scope.ProductSearchInput.toLowerCase()) != -1)
+			if (item.process.toLowerCase().indexOf($scope.ProductSearchInput.toLowerCase()) != -1)
 				return true;
 		}
 		return false;
