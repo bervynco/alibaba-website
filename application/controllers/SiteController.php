@@ -8,7 +8,7 @@ class SiteController extends CI_Controller
         foreach($arrColumns as $col){
             $insertArray[$col] = (!empty($postData[$col])) ? $postData[$col] : null;
         }
-        $insertArray['section'] = $section;
+        // $insertArray['section'] = $section;
         return $insertArray;
     }
 
@@ -23,6 +23,7 @@ class SiteController extends CI_Controller
     public function createAboutReturnArray($name, $link, $data){
         return array('title' => $name, 'link' => $link, 'body' => $data);
     }
+
     public function objectToArray($data){
         return json_decode(json_encode($data), true);
     }
@@ -74,5 +75,34 @@ class SiteController extends CI_Controller
         array_push($siteData, $arrContactDetail);
         
         echo json_encode($siteData);
+    }
+
+    public function updateVisionMission(){
+        $arrColumns = array('id', 'overall_id', 'content_id', 'name', 'description', 'image');
+        //name
+        $postData = json_decode(file_get_contents('php://input'), true);
+        $arrVisionMissionDetail = $this->assignDataToArray($postData, $arrColumns);
+        $visionMissionDetail = $this->site_model->updateVisionMission($arrVisionMissionDetail);
+        if($visionMissionDetail > 0){
+            echo "Successful";
+        }
+        else{
+            echo "Error";
+        }
+
+    }
+
+    public function updateContactInfo(){
+        $arrColumns = array('id', 'mobile', 'email', 'address');
+        $postData = json_decode(file_get_contents('php://input'), true);
+        $arrContactDetail = $this->assignDataToArray($postData, $arrColumns);
+        $contact = $this->site_model->updateContactInfo($arrContactDetail);
+        if($contact > 0){
+            echo "Successful";
+        }
+        else{
+            echo "Error";
+        }
+
     }
 }

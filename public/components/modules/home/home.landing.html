@@ -6,7 +6,12 @@
             <div id="overview" class="section-overview">
                 <div class="section-overview layer-wrapper">
                     <div class="section-overview layer-content" flex layout="column" layout-align layout-padding>
-                        <div flex></div>
+                        <div flex layout layout-align="end stretch">
+                            <div flex="90" layout layout-align="center center"></div>
+                            <div flex layout layout-align="center center">
+                                <md-button class="md-raised" flex ng-click="EditTitle(PageData[0].content, $event)"> Edit Content </md-button>
+                            </div>
+                        </div>
                         <div flex="70" layout layout-align>
                             <div flex="30" flex-md="25" flex-sm="5" flex-xs="0"></div>
                             <div flex layout="column" layout-align>
@@ -52,6 +57,12 @@
             <div id="contactus" class="section-contact">
                 <div class="section-contact layer-back">
                     <div class="section-contact layer-content" flex layout="column" layout-align>
+                        <div flex="10" layout layout-align="end stretch">
+                            <div flex="90" layout layout-align="center center"></div>
+                            <div flex layout layout-align="center center">
+                                <md-button class="md-raised" flex> Edit Content </md-button>
+                            </div>
+                        </div>
                         <div class="contact-container" flex="35" flex-sm="25" flex-xs="35" layout layout-sm="column" layout-xs="column" layout-align layout>
                             <div class="contact-card" flex layout="column" layout-sm="row" layout-xs="row" layout-align>
                                 <div class=" label" flex flex-sm="20" flex-xs="20" layout layout-align="center center"><span class="fa fa-phone"></span></div>

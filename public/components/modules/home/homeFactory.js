@@ -22,7 +22,7 @@ homeModule.factory('DrilldownFactory', function($http, $location, HomeService) {
 homeModule.service('HomeService', function($http, $window) {
     this.GetData = function() {
         return $http({
-            url: "index.php/SiteController/getAllSiteData",,
+            url: "index.php/SiteController/getAllSiteData",
             // url: "api/sitedata.json",
             method: 'GET'
         });

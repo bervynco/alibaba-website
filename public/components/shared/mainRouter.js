@@ -27,6 +27,14 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			templateUrl: "public/components/modules/settings/settings.html",
 			controller: "SettingsController"
 		})
+		.state("login", {
+			name: "login",
+			parent: "site",
+			data: {},
+			url: "/login",
+			templateUrl: "public/components/modules/login/login.html",
+			controller: "LoginController"
+		})
 		.state("home", {
 			name: "home",
 			parent: "site",

@@ -68,10 +68,12 @@
 	<script src="public/components/shared/mainDirectives.js"></script>
 	<script src="public/components/shared/mainFactory.js"></script>
 	<script src="public/components/shared/mainRouter.js"></script>
-
 	<!-------------------------------------------------------------------------------------->
 	<!-------------------------------    public/components    ------------------------------>
 	<!-------------------------------------------------------------------------------------->
+
+	<!-- LOGIN -->
+	<script src="public/components/modules/login/loginController.js"></script>
 
 	<!-- AUTH -->
 	<script src="public/components/modules/auth/authController.js"></script>
@@ -88,6 +90,9 @@
 	<script src="public/components/modules/settings/settingsDirective.js"></script>
 	<script src="public/components/modules/settings/settingsFactory.js"></script>
 
+	<!-- MODALS -->
+	<script src="public/components/modules/modals/modalController.js"></script>
+	
 </head>
 <body ng-app="MainApplication" ng-controller="MainController" class="scroll" layout="column" layout-align="start stretch" ng-cloak>
 	<!-- START:WEBPAGE NAVIGATION -->

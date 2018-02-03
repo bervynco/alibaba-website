@@ -59,5 +59,31 @@ class site_model extends CI_Model {
                  ->get('step');
         return($query->num_rows() > 0) ? $query->result_array(): array();
     }
+
+    function updateContactInfo($detail){
+        $query = $this->db->where('id', $detail['id'])
+                          ->update(
+                                'body', 
+                                array(
+                                    'description' => $detail['description'],
+                                    'image' => $detail['image']
+                                )
+                            );
+        return $this->db->affected_rows();
+    }
+
+    function updateVisionMission($detail){
+        $query = $this->db->where('id', $detail['id'])
+                          ->update(
+                                'contact', 
+                                array(
+                                    'telephone' => $detail['telephone'],
+                                    'mobile' => $detail['mobile'],
+                                    'email' => $detail['email'],
+                                    'address' => $detail['address']
+                                )
+                            );
+        return $this->db->affected_rows();
+    }
 }
 ?>
