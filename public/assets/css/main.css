@@ -6,8 +6,16 @@
 html, body {
     cursor: default;
     background: rgba(245, 245, 245, 1);
+    /* top: 0 !important; */
 }
 
+.md-dialog-container {
+    top: 0 !important;
+}
+
+.md-dialog-is-showing {
+    top: 0 !important;
+}
 /*
 colors
 	red: rgba(244,67,54,1)
@@ -512,3 +520,55 @@ input.filter-input:focus {
 /*:root{
 	font-size: calc(12px + 3vw);
 }*/
+
+
+
+
+/* modal */
+input[type="text"], input[type="email"], textarea {
+        border: 1px solid rgba(200,200,200,1);
+        border-radius: 5px;
+        padding: 10px;
+        color: rgba(100,100,100,1);
+    }
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+        border: 2.5px solid rgba(150,150,150,1);
+        border-radius: 5px;
+        padding: 10px;
+        color: rgba(80,80,80,1);
+    }
+    .dialog-heading {
+        background-color: rgba(244, 67, 54, .85);
+        font-size: 3vh;
+        font-weight: bolder;
+        color: white;
+    }
+    .dialog-content > div > .content-wrapper {
+        /* border: 1.0px solid rgba(150,150,150,1); */
+        padding:10px;
+        margin: 5px;
+    }
+    .dialog-content > div > .content-wrapper > div > .input-div {
+        height: 60px;
+        padding-bottom: 10px;
+    }
+    .dialog-content > div > .content-wrapper > div > .textarea-div {
+        height: 70px;
+        padding-bottom: 10px;
+    }
+    .dialog-content > div > .content-wrapper > div > .custom-textarea-div {
+        padding-bottom: 10px;
+    }
+    .dialog-content > div > .content-wrapper > div >.textarea-div > div > textarea {
+        width: 100%;
+    }
+    .dialog-content > div > .content-wrapper > div > .input-div > div > input {
+        width: 100%;
+    }
+    .submit-button {
+        background-color: rgba(34, 139, 34, 0.85) !important;
+        color: white !important
+    }
+    .header {
+        font-weight: bolder;
+    }

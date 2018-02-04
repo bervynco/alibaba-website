@@ -26,7 +26,23 @@ app.factory('DataFactory', function ($http) {
         },
         MainFactorySample: function () {
             return "From Main Factory";
-        }
+        },
+        UpdateContactDetails: function(contact){
+            return $http({
+                url: "index.php/SiteController/updateContactInfo",
+                method: 'POST',
+                data: contact,
+                cache: false
+            });
+        },
+        UpdateVisionMission: function(data){
+            return $http({
+                url: "index.php/SiteController/updateVisionMission",
+                method: 'POST',
+                data: data,
+                cache: false
+            });
+        },
     }
 
 });

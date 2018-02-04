@@ -9,7 +9,6 @@ homeModule.controller('HomeController', function($location,$scope, $state, $wind
 	}
 	
 	$scope.EditTitle = function(title, ev){
-		console.log("HELLO WORLD");
 		console.log(title);
 		$mdDialog.show({
             parent: angular.element(document.body),
@@ -20,16 +19,25 @@ homeModule.controller('HomeController', function($location,$scope, $state, $wind
             },
             controller: 'ModalController'
         }).then(function(data){
-            // if(data == "Successful"){
-            //     $scope.logDetails = {name: $scope.userDetails.name, page: 'Payables Page', action: 'Edit'};
+			if(data === 'Successful'){
+				$state.reload();
+			}
+        });
+	}
 
-            //     DataFactory.SetPageLog($scope.logDetails).success(function(response){
-            //         console.log(response);
-            //     }).error(function(error){
-
-            //     });
-            //     getData();
-            // }
+	$scope.EditContact = function(contact, ev){
+		$mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            templateUrl: "public/components/modules/modals/editContactModal.html",
+            locals: {
+                 data:contact.content
+            },
+            controller: 'ModalController'
+        }).then(function(data){
+			if(data === 'Successful'){
+				$state.reload();
+			}
         });
 	}
 });
@@ -51,6 +59,22 @@ homeModule.controller('ProcessController', function($location,$scope,$state,$sta
 	$scope.DrilldownData = processData[0];
 });
 
-homeModule.controller('VisionController', function($location,$scope,$state,$stateParams,$window, visionData){
+homeModule.controller('VisionController', function($location,$scope,$state,$stateParams,$window, visionData, $mdDialog){
 	$scope.DrilldownData = visionData[0];
+	$scope.EditVisionMissionData = function(data, ev){
+		console.log(data);
+		$mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            templateUrl: "public/components/modules/modals/editVisionMissionModal.html",
+            locals: {
+                 data:data
+            },
+            controller: 'ModalController'
+        }).then(function(data){
+			if(data === 'Successful'){
+				$state.reload();
+			}
+        });
+	}
 });

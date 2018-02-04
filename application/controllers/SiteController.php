@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SiteController extends CI_Controller
 {
-    public function assignDataToArray($section, $postData, $arrColumns){
+    public function assignDataToArray($postData, $arrColumns){
+        $insertArray = array();
         foreach($arrColumns as $col){
             $insertArray[$col] = (!empty($postData[$col])) ? $postData[$col] : null;
         }
@@ -20,8 +21,8 @@ class SiteController extends CI_Controller
         return array('section' => $section, 'content' => array($data));
     }
 
-    public function createAboutReturnArray($name, $link, $data){
-        return array('title' => $name, 'link' => $link, 'body' => $data);
+    public function createAboutReturnArray($name, $link, $data, $id){
+        return array('title' => $name, 'link' => $link, 'body' => $data, 'id' => $id);
     }
 
     public function objectToArray($data){
@@ -45,13 +46,15 @@ class SiteController extends CI_Controller
         $arrProducts = $this->createAboutReturnArray(
                             $arrContentDetail[$productIndex]['title'],
                             $arrContentDetail[$productIndex]['link'],
-                            $this->site_model->selectProductData($arrOverallDetail['id'], $arrContentDetail[$productIndex]['id'])
+                            $this->site_model->selectProductData($arrOverallDetail['id'], $arrContentDetail[$productIndex]['id']),
+                            $productIndex + 1
         );
 
         $arrVision = $this->createAboutReturnArray(
                             $arrContentDetail[$visionIndex]['title'],
                             $arrContentDetail[$visionIndex]['link'],
-                            $this->site_model->selectVisionData($arrOverallDetail['id'], $arrContentDetail[$visionIndex]['id'])
+                            $this->site_model->selectVisionData($arrOverallDetail['id'], $arrContentDetail[$visionIndex]['id']),
+                            $visionIndex + 1
         );
         
         $arrProcess = $this->site_model->selectProcessData($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id']);
@@ -62,7 +65,8 @@ class SiteController extends CI_Controller
         $arrNewProcess = $this->createAboutReturnArray(
                             $arrContentDetail[$processIndex]['title'],
                             $arrContentDetail[$processIndex]['link'],
-                            $arrProcess
+                            $arrProcess,
+                            $processIndex + 1
         );
         $aboutDetail = array();
         array_push($aboutDetail, $arrProducts);
@@ -78,25 +82,31 @@ class SiteController extends CI_Controller
     }
 
     public function updateVisionMission(){
-        $arrColumns = array('id', 'overall_id', 'content_id', 'name', 'description', 'image');
+        // $arrColumns = array('id', 'overall_id', 'content_id', 'name', 'description', 'image');
         //name
+        $errorFlag = 0;
         $postData = json_decode(file_get_contents('php://input'), true);
-        $arrVisionMissionDetail = $this->assignDataToArray($postData, $arrColumns);
-        $visionMissionDetail = $this->site_model->updateVisionMission($arrVisionMissionDetail);
-        if($visionMissionDetail > 0){
-            echo "Successful";
+        // $arrVisionMissionDetail = $this->assignDataToArray($postData, $arrColumns);
+        foreach($postData['body'] as $index => $bodyContent){
+            $visionMissionDetail = $this->site_model->updateVisionMission($postData['id'], $bodyContent['description']);
+            if($visionMissionDetail == 1){
+                $errorFlag = 1;
+            }
         }
-        else{
-            echo "Error";
-        }
+        
+       if($errorFlag == 1){
+           echo 'Error';
+       }
+       else {
+           echo 'Successful';
+       }
 
     }
 
     public function updateContactInfo(){
-        $arrColumns = array('id', 'mobile', 'email', 'address');
+        $arrColumns = array('id', 'telephone', 'mobile', 'email', 'address');
         $postData = json_decode(file_get_contents('php://input'), true);
-        $arrContactDetail = $this->assignDataToArray($postData, $arrColumns);
-        $contact = $this->site_model->updateContactInfo($arrContactDetail);
+        $contact = $this->site_model->updateContactInfo($postData[0]);
         if($contact > 0){
             echo "Successful";
         }

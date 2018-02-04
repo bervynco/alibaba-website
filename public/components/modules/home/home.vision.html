@@ -3,7 +3,9 @@
         <div class="layer-content" flex layout="column" layout-align>
             <div class="header" flex="15" layout layout-align="center center"><span>{{DrilldownData.title}}</span></div>
             <div class="body" flex layout="column" layout-align layout-padding>
-                <div flex="10"></div>
+                <div flex="10" layout layout-align="end stretch">
+                    <md-button class="md-raised" ng-click="EditVisionMissionData(DrilldownData, $event)"> Edit Content </md-button>
+                </div>
                 <div flex="30" layout layout-align ng-repeat="data in DrilldownData.body">
                     <div flex="30" flex-xs="0"></div>
                     <div class="box-container" flex layout="column" layout-align>

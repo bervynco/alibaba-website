@@ -12,7 +12,7 @@ class site_model extends CI_Model {
     }
 
     function selectContactData($id){
-        $query = $this->db->select(array('telephone', 'mobile', 'email', 'address'))->where('id', $id)->get('contact');
+        $query = $this->db->select(array('id', 'telephone', 'mobile', 'email', 'address'))->where('id', $id)->get('contact');
         return $query->first_row();
         // return($query->num_rows() > 0) ? $query->result_array(): array();
     }
@@ -63,24 +63,23 @@ class site_model extends CI_Model {
     function updateContactInfo($detail){
         $query = $this->db->where('id', $detail['id'])
                           ->update(
-                                'body', 
+                                'contact', 
                                 array(
-                                    'description' => $detail['description'],
-                                    'image' => $detail['image']
+                                    'telephone' => $detail['telephone'],
+                                    'email' => $detail['email'],
+                                    'address' => $detail['address'],
+                                    'mobile' => $detail['mobile'],
                                 )
                             );
         return $this->db->affected_rows();
     }
 
-    function updateVisionMission($detail){
-        $query = $this->db->where('id', $detail['id'])
+    function updateVisionMission($contentID, $description){
+        $query = $this->db->where('content_id', $contentID)
                           ->update(
-                                'contact', 
+                                'body', 
                                 array(
-                                    'telephone' => $detail['telephone'],
-                                    'mobile' => $detail['mobile'],
-                                    'email' => $detail['email'],
-                                    'address' => $detail['address']
+                                    'description' => $description
                                 )
                             );
         return $this->db->affected_rows();

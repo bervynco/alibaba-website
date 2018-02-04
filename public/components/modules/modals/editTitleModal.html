@@ -1,58 +1,10 @@
-
-<style>
-    input[type="text"],textarea {
-        border: 1px solid rgba(200,200,200,1);
-        border-radius: 5px;
-        padding: 10px;
-        color: rgba(100,100,100,1);
-    }
-    input[type="text"]:focus, textarea:focus {
-        border: 2.5px solid rgba(150,150,150,1);
-        border-radius: 5px;
-        padding: 10px;
-        color: rgba(80,80,80,1);
-    }
-    .dialog-heading {
-        background-color: rgba(244, 67, 54, .85);
-        font-size: 3vh;
-        font-weight: bolder;
-        color: white;
-    }
-    .dialog-content > div > .content-wrapper {
-        height:200px;
-        border: 1.0px solid rgba(150,150,150,1);
-        padding:10px;
-        margin: 5px;
-    }
-    .dialog-content > div > .content-wrapper > div > .input-div {
-        height: 40px;
-        padding-bottom: 10px;
-    }
-    .dialog-content > div > .content-wrapper > div > .textarea-div {
-        height: 70px;
-        padding-bottom: 10px;
-    }
-    .dialog-content > div > .content-wrapper > div >.textarea-div > div > textarea {
-        width: 100%;
-    }
-    .dialog-content > div > .content-wrapper > div > .input-div > div > input {
-        width: 100%;
-    }
-    .submit-button {
-        background-color: rgba(34, 139, 34, 0.85) !important;
-        color: white !important
-    }
-    .header {
-        font-weight: bolder;
-    }
-</style>
 <md-dialog layout="column" layout-align="start stretch" style="width: 60%; height: 100%">
     <div flex='10' layout layout-align="start stretch" class="dialog-heading"> 
         <div flex layout layout-align="center center"> Edit your own content </div>
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex="90" layout="column" layout-align="start stretch" class="scroll">
-            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="title in data" class="content-wrapper">
+            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="title in data" class="content-wrapper" style="height:200px;">
                 <div flex="90" layout="column" layout-align="start stretch">
                     <div flex layout="row" layout-align="start stretch" class="input-div">
                         <div flex="15" layout layout-align="start stretch" class="header">
