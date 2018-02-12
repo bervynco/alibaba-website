@@ -2,7 +2,12 @@
     <div class="content">
         <div class="layer-content" flex layout="column" layout-align>
             <div class="header element-fixed" flex="20" layout="column" layout-align>
-                <div flex layout layout-align="center center"><span>{{DrilldownData.title}}</span></div>
+                <div flex layout layout-align="center center">
+                    <span>{{DrilldownData.title}}</span>
+                    <span>
+                        <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button>
+                    </span>
+                </div>
                 <div class="filter" flex="40" layout layout-align="center center">
                     <input class="filter-input" type="text" ng-model="ProductSearchInput" placeholder="Search" />
                 </div>

@@ -23,7 +23,7 @@ class site_model extends CI_Model {
     }
 
     function selectProductData($overallID, $contentID){
-        $query = $this->db->select(array('id', 'name', 'description', 'image'))
+        $query = $this->db->select(array('id', 'overall_id', 'content_id', 'name', 'description', 'image'))
                 ->where('overall_id', $overallID)
                 ->where('content_id', $contentID)
                 ->get('body');
@@ -83,6 +83,28 @@ class site_model extends CI_Model {
                                 )
                             );
         return $this->db->affected_rows();
+    }
+
+    function updateProductInfo($data, $overallID, $contentID){
+        $query = $this->db
+                ->where('content_id', $contentID)
+                ->where('id', $data['id'])
+                ->update(
+                    'body', 
+                    array(
+                        'description' => $data['description'],
+                        'name' => $data['name'],
+                        'image'=> $data['image']
+                    )
+                );
+        return $this->db->affected_rows();
+    }
+
+    function insertNewProduct($data, $overallID, $contentID){
+        $data['overall_id'] = $overallID;
+        $data['content_id'] = $contentID;
+        $query = $this->db->insert('body', $data);
+        return $this->db->insert_id();
     }
 }
 ?>

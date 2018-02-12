@@ -42,8 +42,9 @@ homeModule.controller('HomeController', function($location,$scope, $state, $wind
 	}
 });
 
-homeModule.controller('ProductsController', function($location,$scope,$state,$stateParams,$window, productsData){
+homeModule.controller('ProductsController', function($location,$scope,$state,$stateParams,$window, productsData, $mdDialog){
 	$scope.DrilldownData = productsData[0];
+	console.log($scope.DrilldownData);
 	$scope.ProductSearch = function(item){
 		if ($scope.ProductSearchInput == undefined)
 			return true;
@@ -52,6 +53,21 @@ homeModule.controller('ProductsController', function($location,$scope,$state,$st
 				return true;
 		}
 		return false;
+	}
+	$scope.EditProducts = function(data, ev){
+		$mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            templateUrl: "public/components/modules/modals/editProductsModal.html",
+            locals: {
+                 data:data
+            },
+            controller: 'ModalController'
+        }).then(function(data){
+			if(data === 'Successful'){
+				$state.reload();
+			}
+        });
 	}
 });
 
@@ -62,7 +78,6 @@ homeModule.controller('ProcessController', function($location,$scope,$state,$sta
 homeModule.controller('VisionController', function($location,$scope,$state,$stateParams,$window, visionData, $mdDialog){
 	$scope.DrilldownData = visionData[0];
 	$scope.EditVisionMissionData = function(data, ev){
-		console.log(data);
 		$mdDialog.show({
             parent: angular.element(document.body),
             targetEvent: ev,

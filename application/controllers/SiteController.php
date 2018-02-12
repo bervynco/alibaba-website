@@ -21,8 +21,8 @@ class SiteController extends CI_Controller
         return array('section' => $section, 'content' => array($data));
     }
 
-    public function createAboutReturnArray($name, $link, $data, $id){
-        return array('title' => $name, 'link' => $link, 'body' => $data, 'id' => $id);
+    public function createAboutReturnArray($name, $link, $data, $id, $overallID){
+        return array('title' => $name, 'link' => $link, 'body' => $data, 'id' => $id,  'overall_id' => $overallID);
     }
 
     public function objectToArray($data){
@@ -39,6 +39,8 @@ class SiteController extends CI_Controller
                             $this->site_model->selectContactData($arrOverallDetail['contact_id']));
         
         $arrContentDetail = $this->site_model->selectContentData($arrOverallDetail['id']);
+        // print_r($arrContentDetail);
+        // echo '<br>';
         $productIndex = array_search('products', array_column($arrContentDetail, 'link'));
         $visionIndex = array_search('vision', array_column($arrContentDetail, 'link'));
         $processIndex = array_search('process', array_column($arrContentDetail, 'link'));
@@ -47,14 +49,16 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$productIndex]['title'],
                             $arrContentDetail[$productIndex]['link'],
                             $this->site_model->selectProductData($arrOverallDetail['id'], $arrContentDetail[$productIndex]['id']),
-                            $productIndex + 1
+                            $productIndex + 1,
+                            $arrContentDetail[$productIndex]['overall_id']
         );
 
         $arrVision = $this->createAboutReturnArray(
                             $arrContentDetail[$visionIndex]['title'],
                             $arrContentDetail[$visionIndex]['link'],
                             $this->site_model->selectVisionData($arrOverallDetail['id'], $arrContentDetail[$visionIndex]['id']),
-                            $visionIndex + 1
+                            $visionIndex + 1,
+                            $arrContentDetail[$visionIndex]['overall_id']
         );
         
         $arrProcess = $this->site_model->selectProcessData($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id']);
@@ -66,7 +70,8 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$processIndex]['title'],
                             $arrContentDetail[$processIndex]['link'],
                             $arrProcess,
-                            $processIndex + 1
+                            $processIndex + 1,
+                            $arrContentDetail[$processIndex]['overall_id']
         );
         $aboutDetail = array();
         array_push($aboutDetail, $arrProducts);
@@ -82,11 +87,8 @@ class SiteController extends CI_Controller
     }
 
     public function updateVisionMission(){
-        // $arrColumns = array('id', 'overall_id', 'content_id', 'name', 'description', 'image');
-        //name
         $errorFlag = 0;
         $postData = json_decode(file_get_contents('php://input'), true);
-        // $arrVisionMissionDetail = $this->assignDataToArray($postData, $arrColumns);
         foreach($postData['body'] as $index => $bodyContent){
             $visionMissionDetail = $this->site_model->updateVisionMission($postData['id'], $bodyContent['description']);
             if($visionMissionDetail == 1){
@@ -113,6 +115,32 @@ class SiteController extends CI_Controller
         else{
             echo "Error";
         }
+    }
 
+    public function updateProductInfo(){
+        $errorFlag = 0;
+        $postData = json_decode(file_get_contents('php://input'), true);
+
+        foreach($postData['body'] as $index => $body){
+            $id = (int) $body['id'];
+            if($id == 0){
+                // INSERT
+                $updateInfo = $this->site_model->insertNewProduct($body, $postData['overall_id'], $postData['id']);
+                if($updateInfo == 0){
+                    $errorFlag = 1;
+                }
+            }
+            else {
+                // UPDATE
+                $insertInfo = $this->site_model->updateProductInfo($body, $postData['overall_id'], $postData['id']);
+                if($insertInfo == 0){
+                    $errorFlag = 1;
+                }
+            }
+        }
+        if($errorFlag == 1)
+            echo "Error";
+        else
+            echo "Successful";
     }
 }
