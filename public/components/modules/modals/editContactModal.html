@@ -1,6 +1,12 @@
 <md-dialog layout="column" layout-align="start stretch" style="width: 60%; height: 100%">
-    <div flex='10' layout layout-align="start stretch" class="dialog-heading"> 
+    <div flex='10' layout layout-align="start stretch" class="dialog-heading">
         <div flex layout layout-align="center center"> Edit your own content </div>
+        <div flex></div>
+        <div flex="10" layout layout-align="end center">
+            <md-button class="md-icon-button" ng-click="Close()">
+                <i class="fa fa-close"></i>
+            </md-button>
+        </div>
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex layout="column" layout-align="start stretch" class="scroll">
@@ -8,7 +14,7 @@
                 <div flex layout="column" layout-align="start stretch">
                     <div flex="none" layout="row" layout-align="start stretch" class="input-div">
                         <div flex="20" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Telephone Number <span style="color: red">*</span></div>
+                            <div flex layout layout-align="start center"><span style="color: red">*</span> Telephone Number </div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <input flex="none" type="text" ng-model="contact.telephone" layout-align="start center">
@@ -16,7 +22,7 @@
                     </div>
                     <div flex="none" layout="row" layout-align="start stretch" class="textarea-div">
                         <div flex="20" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Address <span style="color: red">*</span></div>
+                            <div flex layout layout-align="start center"><span style="color: red">*</span> Address </div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <textarea flex="none" ng-model="contact.address" layout-align="start center"></textarea>
@@ -24,7 +30,7 @@
                     </div>
                     <div flex="none" layout="row" layout-align="start stretch" class="input-div">
                         <div flex="20" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Email Address <span style="color: red">*</span></div>
+                            <div flex layout layout-align="start center"><span style="color: red">*</span> Email Address </div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <input flex="none" type="email" ng-model="contact.email" layout-align="start center">
@@ -32,7 +38,7 @@
                     </div>
                     <div flex="none" layout="row" layout-align="start stretch" class="input-div">
                         <div flex="20" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Mobile Number: <span style="color: red">*</span></div>
+                            <div flex layout layout-align="start center"><span style="color: red">*</span> Mobile Number: </div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <input flex="none" type="text" ng-model="contact.mobile" layout-align="start center">
@@ -44,10 +50,10 @@
         <div flex="10" layout layout-align="end stretch">
             <div flex></div>
             <div flex="10" layout layout-align="end stretch">
-                <md-button> Cancel </md-button>
+                <md-button ng-click="Close()"> Cancel </md-button>
             </div>
             <div flex="10" layout layout-align="end stretch">
-                <md-button class="md-raised submit-button" ng-click="UpdateContactDetails()"> Update </md-button>
+                <md-button class="md-raised  background--red" ng-click="UpdateContactDetails()"> Update </md-button>
             </div>
         </div>
     </div>

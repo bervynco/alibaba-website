@@ -1,27 +1,43 @@
 <div class="site-drilldown wrapper">
-    <div class="content">
-        <div class="layer-content" flex layout="column" layout-align>
-            <div class="header element-fixed" flex="20" layout="column" layout-align>
-                <div flex layout layout-align="center center"><span>{{DrilldownData.title}}</span></div>
-                <div class="filter" flex="40" layout layout-align="center center">
-                    <input class="filter-input" type="text" ng-model="ProductSearchInput" placeholder="Search" />
+    <div class="content" style="background:rgba(244, 67, 54, .85)">
+        <div style="height: 100%;" layout="column" layout-align>
+            <div flex="15" layout layout-align layout-padding>
+                <div flex layout layout-align="start center">
+                    <span flex></span>
+                    <span flex style="height: 100%; font-size: calc(14px + 1vw); color: rgba(255,255,255,1); font-weight: bolder; letter-spacing: .25vw; text-transform: uppercase;" layout layout-align="start center" layout-padding>{{DrilldownData.title}}</span>
+                    <span>
+                        <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button>
+                    </span>
+                </div>
+            </div>
+            <div class="" flex="" layout layout-align ng-if="displayProduct">
+                <div flex="5"></div>
+                <div style="" flex="25" layout="column" layout-align>
+                    <div class="product-cat--header" flex="10" layout layout-align="start center" layout-padding><span class="light-grey text">CATEGORY</span></div>
+
+                    <div layout="column" layout-align ng-repeat="prodCat in ProductCategory">
+                        <div class="product-cat" flex layout layout-align="start center" layout-padding ng-click="SetSelectedProductCategory(prodCat.category)" ng-class="{'product-cat--active':SelectedProductCategory===prodCat.category}"><span class="">{{prodCat.category}}</span></div>
+                    </div>
+
+                </div>
+                <div flex="none" flex-setter width-in-percent="1"></div>
+                <div class="product-preview-wrapper" flex layout layout-align>
+                    <div class="" flex layout layout-align>
+                        <div class="grid-list scroll" flex layout-align layout-padding>
+                            <div class="grid-list-row" flex layout layout-align ng-repeat="x in Products">
+                                <div class="grid-list-item" flex="25" layout layout-align ng-repeat="(l,m) in x"    ng-if="SelectedProductCategory=='all'||SelectedProductCategory==x[$index].category">
+                                    <div class="grid-list-box" flex layout="column" layout-align>
+                                        <div class="body" flex layout layout-align  ng-style="{'background-image':'url({{m.image}})'}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div flex="5"></div>
             </div>
-            <div class="body" flex layout="column" layout-align>
-                <div class="" flex="80" layout layout-align>
-                    <div class="product-list" flex layout layout-align ng-if="DrilldownData.body.length!=0">
-                        <md-grid-list class="product" flex layout layout-align class md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="3" md-cols-lg="4" md-cols="4" md-row-height="300px" md-gutter="10px">
-                            <md-grid-tile ng-repeat="data in DrilldownData.body | filter:ProductSearch">
-                                <md-grid-tile-footer flex layout layout-align="center center" <span layout layout-align>{{data.name}}</span>
-                                </md-grid-tile-footer>
-                                <div class="product-content" ng-style="{'background-image': 'url({{data.image}})'}" flex layout="column" layout-align></div>
-                            </md-grid-tile>
-                        </md-grid-list>
-                    </div>
-                    <div class="list-item" flex layout layout-align="center center" ng-if="DrilldownData.body.length==0"><span class="subtle">No Data</span></div>
-                </div>
-            </div>
+            <div flex="20"></div>
         </div>
     </div>
 </div>

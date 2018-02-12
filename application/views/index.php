@@ -47,8 +47,13 @@
 	<script src="public/assets/lib/angular/uirouter.js"></script>
 	<script src="public/assets/lib/angular/angular-momentjs.js"></script>
 
-	<!-- ANGULAR MATERIAL LIBRARY -->
-	<script src="public/assets/lib/material/angular-material.min.js"></script>
+    <!-- ANGULAR MATERIAL LIBRARY -->
+    <script src="public/assets/lib/material/angular-material.min.js"></script>
+
+    <!-- JK CAROUSEL LIBRARY -->
+    <script src="public/assets/lib/carousel/jk-carousel.min.js"></script>
+    <script src="public/assets/lib/carousel/jk-carousel.min.css"></script>
+
 
 	<!-- JQUERY SCROLLBAR -->
 	<script src="public/assets/lib/jquery/jquery.scrollbar.min.js"></script>
@@ -92,7 +97,7 @@
 
 	<!-- MODALS -->
 	<script src="public/components/modules/modals/modalController.js"></script>
-	
+
 </head>
 <body ng-app="MainApplication" ng-controller="MainController" class="scroll" layout="column" layout-align="start stretch" ng-cloak>
 	<!-- START:WEBPAGE NAVIGATION -->

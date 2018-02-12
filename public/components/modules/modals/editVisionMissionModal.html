@@ -1,22 +1,28 @@
 <md-dialog layout="column" layout-align="start stretch" style="width: 60%; height: 100%">
-    <div flex='10' layout layout-align="start stretch" class="dialog-heading"> 
+    <div flex='10' layout layout-align="start stretch" class="dialog-heading">
         <div flex layout layout-align="center center"> Edit your own content </div>
+        <div flex></div>
+        <div flex="10" layout layout-align="end center">
+            <md-button class="md-icon-button" ng-click="Close()">
+                <i class="fa fa-close"></i>
+            </md-button>
+        </div>
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex layout="column" layout-align="start stretch" class="scroll">
             <div flex layout="row" layout-align="start stretch" class="content-wrapper">
                 <div flex layout="column" layout-align="start stretch">
                     <div flex="none" layout="row" layout-align="start stretch" class="custom-textarea-div">
-                        <div flex="20" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Vision <span style="color: red">*</span></div>
+                        <div flex="20" layout layout-align="start stretch" class="header" layout-padding>
+                            <div flex layout layout-align="end center"> <span style="color: red">*</span> Vision</div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <textarea flex="none" ng-model="data.body[0].description" layout-align="start center" rows="6" cols="100"></textarea>
                         </div>
                     </div>
                     <div flex="none" layout="row" layout-align="start stretch">
-                        <div flex="20" layout layout-align="start stretch" class="header" class="custom-textarea-div">
-                            <div flex layout layout-align="start center"> Mission <span style="color: red">*</span></div>
+                        <div flex="20" layout layout-align="start stretch" class="header custom-textarea-div" layout-padding>
+                            <div flex layout layout-align="end center"> <span style="color: red">*</span> Mission</div>
                         </div>
                         <div flex layout layout-align="start stretch">
                             <textarea flex="none" ng-model="data.body[1].description" layout-align="start center" rows="6" cols="100"></textarea>
@@ -28,10 +34,10 @@
         <div flex="10" layout layout-align="end stretch">
             <div flex></div>
             <div flex="10" layout layout-align="end stretch">
-                <md-button> Cancel </md-button>
+                <md-button ng-click="Close()"> Cancel </md-button>
             </div>
             <div flex="10" layout layout-align="end stretch">
-                <md-button class="md-raised submit-button" ng-click="UpdateVisionMissionDetails()"> Update </md-button>
+                <md-button class="md-raised background--red" ng-click="UpdateVisionMissionDetails()"> Update </md-button>
             </div>
         </div>
     </div>

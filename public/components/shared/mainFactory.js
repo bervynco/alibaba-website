@@ -43,6 +43,14 @@ app.factory('DataFactory', function ($http) {
                 cache: false
             });
         },
+        UpdateProductDetails: function(data){
+            return $http({
+                url: "index.php/SiteController/updateProductInfo",
+                method: 'POST',
+                data: data,
+                cache: false
+            });
+        }
     }
 
 });

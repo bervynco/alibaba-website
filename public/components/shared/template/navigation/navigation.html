@@ -4,23 +4,22 @@
             <div class="site-navigation-logo-client" flex layout layout-align></div>
         </div>
         <div flex></div>
-        <div class="toggle-navbar-button" flex="10" layout layout-align="center center" layout-padding ng-if="ScreenDimension.innerWidth <= 1020 " ng-click="ToggleNavigation()"><span class="fa fa-navicon"></span></div>
-        <div flex="40" flex-lg="45" layout layout-align ng-if="ScreenDimension.innerWidth > 1020 ">
+        <div class="toggle-navbar-button" flex="10" layout layout-align="center center" layout-padding hide show-sm show-xs ng-click="ToggleNavigation()"><span class="fa fa-navicon"></span></div>
+        <div flex="40" flex-lg="45" layout layout-align hide show-gt-sm>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('home')"><span>overview</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('aboutus')" ><span>about us</span></div>
-            <!-- <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('aboutus')" ui-sref="home('#':'aboutus')" ><span>about us</span></div> -->
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('products')"><span>products</span></div>
-            <div class="site-navigation-link active" flex layout layout-align="center center" ng-click="GoToTag('contactus')"><span>contact</span></div>
+            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('contactus')"><span>contact</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('login')"><span>login</span></div>
         </div>
     </div>
-    <div class="toggle-navbar hidden" layout layout-align ng-if="ScreenDimension.innerWidth <= 1020 ">
+    <div class="toggle-navbar hidden" layout layout-align hide show-sm show-xs>
         <div flex layout="column" layout-align>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('home')"><span>overview</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('aboutus')"><span>about us</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('products')"><span>products</span></div>
-            <div class="site-navigation-link active" flex layout layout-align="center center" ng-click="GoToTag('contactus')"><span>contact</span></div>
-            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('login')"><span>products</span></div>
+            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('contactus')"><span>contact</span></div>
+            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('login')"><span>login</span></div>
         </div>
     </div>
 </div>
