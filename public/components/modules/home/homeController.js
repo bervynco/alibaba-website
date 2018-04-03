@@ -71,7 +71,6 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 
 });
 
-<<<<<<< HEAD
 homeModule.controller('ProductsController', function($location, $scope, $state, $stateParams, $window, productsData, $mdDialog) {
 	$scope.DrilldownData = productsData[0];
 	$scope.displayProduct = false;
@@ -80,12 +79,6 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	console.log($scope.DrilldownData);
 
 	$scope.ProductSearch = function(item) {
-=======
-homeModule.controller('ProductsController', function($location,$scope,$state,$stateParams,$window, productsData, $mdDialog){
-	$scope.DrilldownData = productsData[0];
-	console.log($scope.DrilldownData);
-	$scope.ProductSearch = function(item){
->>>>>>> origin/master
 		if ($scope.ProductSearchInput == undefined)
 			return true;
 		else {
@@ -94,7 +87,6 @@ homeModule.controller('ProductsController', function($location,$scope,$state,$st
 		}
 		return false;
 	}
-<<<<<<< HEAD
 
 	var sample = [{
 		"category": "food",
@@ -232,23 +224,6 @@ homeModule.controller('ProductsController', function($location,$scope,$state,$st
 	}
 	// Initialize Page
 	LoadPage();
-=======
-	$scope.EditProducts = function(data, ev){
-		$mdDialog.show({
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            templateUrl: "public/components/modules/modals/editProductsModal.html",
-            locals: {
-                 data:data
-            },
-            controller: 'ModalController'
-        }).then(function(data){
-			if(data === 'Successful'){
-				$state.reload();
-			}
-        });
-	}
->>>>>>> origin/master
 });
 
 homeModule.controller('ProcessController', function($location, $scope, $state, $stateParams, $window, processData) {
@@ -257,11 +232,7 @@ homeModule.controller('ProcessController', function($location, $scope, $state, $
 
 homeModule.controller('VisionController', function($location, $scope, $state, $stateParams, $window, visionData, $mdDialog) {
 	$scope.DrilldownData = visionData[0];
-<<<<<<< HEAD
 	$scope.EditVisionMissionData = function(data, ev) {
-=======
-	$scope.EditVisionMissionData = function(data, ev){
->>>>>>> origin/master
 		$mdDialog.show({
 			parent: angular.element(document.body),
 			targetEvent: ev,

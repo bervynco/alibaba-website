@@ -1,5 +1,4 @@
 <md-dialog layout="column" layout-align="start stretch" style="width: 60%; height: 100%">
-<<<<<<< HEAD
     <div flex='10' layout layout-align="start stretch" class="dialog-heading">
         <div flex layout layout-align="center center"> Edit your own content </div>
         <div flex></div>
@@ -8,57 +7,33 @@
                 <i class="fa fa-close"></i>
             </md-button>
         </div>
-=======
-    <div flex='10' layout layout-align="start stretch" class="dialog-heading"> 
-        <div flex layout layout-align="center center"> Edit your own content </div>
->>>>>>> origin/master
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex="90" layout="column" layout-align="start stretch" class="scroll">
             <div flex="none" layout="row" layout-align="start stretch" ng-repeat="product in data.body" class="content-wrapper" style="height:200px;">
                 <div flex="90" layout="column" layout-align="start stretch">
                     <div flex layout="row" layout-align="start stretch" class="input-div">
-<<<<<<< HEAD
                         <div flex="30" layout layout-align="start center" class=" header" layout-padding>
                             <div flex layout layout-align="end center"><span style="color: red">*</div> Product Name
-=======
-                        <div flex="15" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Product Name <span style="color: red">*</div>
->>>>>>> origin/master
                         </div>
                         <div flex layout layout-align="start stretch">
                             <input flex="none" type="text" ng-model="product.name" layout-align="start center">
                         </div>
                     </div>
                     <div flex layout="row" layout-align="start stretch" class="textarea-div">
-<<<<<<< HEAD
                         <div flex="30" layout layout-align="start center" class=" header" layout-padding>
                             <div flex layout layout-align="end center"><span style="color: red">*</div> Product Description
                         </div>
                         <div class="" flex layout layout-align="start stretch">
-=======
-                        <div flex="15" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Product Description <span style="color: red">*</div>
-                        </div>
-                        <div flex layout layout-align="start stretch">
->>>>>>> origin/master
                             <textarea flex="none" ng-model="product.description" layout-align="start center"></textarea>
                         </div>
                     </div>
                     <div flex layout="row" layout-align="start stretch" class="input-div">
-<<<<<<< HEAD
                         <div flex="30" layout layout-align="start stretch" class="header" layout-padding>
                             <div flex layout layout-align="end center"> Product Image </div>
                         </div>
                         <div flex layout layout-align="start center">
                             <input flex="none" type="file" ng-model="product.image" layout-align>
-=======
-                        <div flex="15" layout layout-align="start stretch" class="header">
-                            <div flex layout layout-align="start center"> Product Image </div>
-                        </div>
-                        <div flex layout layout-align="start stretch">
-                            <input flex="none" type="file" ng-model="product.image" layout-align="start center">
->>>>>>> origin/master
                         </div>
                     </div>
                 </div>
@@ -75,7 +50,6 @@
         <div flex="10" layout layout-align="end stretch">
             <div flex></div>
             <div flex="10" layout layout-align="end stretch">
-<<<<<<< HEAD
                 <md-button ng-click="Close()"> Cancel </md-button>
             </div>
             <div flex="10" layout layout-align="end stretch">
@@ -84,13 +58,3 @@
         </div>
     </div>
 </md-dialog>
-=======
-                <md-button> Cancel </md-button>
-            </div>
-            <div flex="10" layout layout-align="end stretch">
-                <md-button class="md-raised submit-button" ng-click="UpdateProductDetails()"> Update </md-button>
-            </div>
-        </div>
-    </div>
-</md-dialog>
->>>>>>> origin/master
