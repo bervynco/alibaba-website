@@ -1,7 +1,6 @@
 <md-dialog layout="column" layout-align="start stretch" style="width: 60%; height: 100%">
     <div flex='10' layout layout-align="start stretch" class="dialog-heading">
         <div flex layout layout-align="center center"> Edit your own content </div>
-
         <div flex></div>
         <div flex="10" layout layout-align="end center">
             <md-button class="md-icon-button" ng-click="Close()">
@@ -11,7 +10,7 @@
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex="90" layout="column" layout-align="start stretch" class="scroll">
-            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="title in data" class="content-wrapper" style="height:200px;">
+            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="title in data" class="content-wrapper">
                 <div flex="90" layout="column" layout-align="start stretch">
                     <div flex layout="row" layout-align="start stretch" class="input-div">
                         <div flex="30" layout layout-align="start stretch" class="header" layout-padding>
@@ -21,6 +20,7 @@
                             <input flex="none" type="text" ng-model="title.title" layout-align="start center">
                         </div>
                     </div>
+                    <div flex="none" flex-setter height-in-percent="1"></div>
                     <div flex layout="row" layout-align="start stretch" class="textarea-div">
                         <div flex="30" layout layout-align="start stretch" class="header" layout-padding>
                             <div flex layout layout-align="end center"><span style="color: red">*</span> Title Description</div>
@@ -29,6 +29,7 @@
                             <textarea flex="none" ng-model="title.body" layout-align="start center"></textarea>
                         </div>
                     </div>
+                    <div flex="none" flex-setter height-in-percent="1"></div>
                     <div flex layout="row" layout-align="start stretch" class="input-div">
                         <div flex="30" layout layout-align="start stretch" class="header" layout-padding>
                             <div flex layout layout-align="end center"> Background Image </div>
