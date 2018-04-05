@@ -12,10 +12,18 @@ class UserController extends CI_Controller
         
         $response = $this->user_model->signIn($postData);
 
-        if($response == 1)
-            echo md5('authenticated');
-        else
+        if($response == 1){
+            $encryptedAuth = md5('authenticated');
+            $this->session->set_userdata('authenticated', $encryptedAuth);
+            echo $encryptedAuth;
+        }
+        else{
             echo null;
+        }    
+    }
+
+    public function signOut(){
+        $this->session->unset_userdata('authenticated');
     }
 }
 ?>
