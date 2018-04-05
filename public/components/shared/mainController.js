@@ -1,4 +1,4 @@
-var app = angular.module('MainApplication', ['ngAnimate', 'ngMaterial', 'MainRouter', 'AuthModule', 'HomeModule', 'SettingsModule', 'angular-momentjs', 'jkAngularCarousel']);
+var app = angular.module('MainApplication', ['ngAnimate', 'ngMaterial', 'MainRouter', 'AuthModule', 'HomeModule', 'SettingsModule', 'LoginModule', 'angular-momentjs', 'jkAngularCarousel']);
 app.config(function($momentProvider) {
     $momentProvider
         .asyncLoading(true)

@@ -1,0 +1,37 @@
+<style> 
+    
+</style>
+<!--https://github.com/jacopotarantino/angular-match-media-->
+<div flex layout layout-align="center stretch">
+    <div flex hide-xs flex-sm="25"></div>
+    <div flex layout="column" layout-align="center stretch" >
+        <div flex="none"></div>
+        <div flex="none" class="login-panel" layout="column" layout-align="start stretch">
+            <div flex="none" class="login-header" layout layout-align="center stretch">
+                <div flex="none" layout layout-align="center center">
+                    <img src=".\public\assets\img\logo\client\client-logo.png" width="110">
+                    <span style="font-size: 30px; font-weight:bolder; text-transform:uppercase;"> Admin Page </span>
+                </div>
+            </div>
+            <form name="loginForm" flex layout="column" layout-align="start stretch" class="login-input-container" ng-submit="signIn()">
+                <div flex="none" class="login-input" layout layout-align="start stretch">
+                    <div flex="none" class="login-icon" layout layout-align="center center">
+                        <img src=".\public\assets\img\icons\png\user.png">
+                    </div>
+                    <input type="text" placeholder="Username" ng-required="true" ng-model="user.username">
+                </div>
+                <div flex="none" class="login-input" layout layout-align="start stretch">
+                    <div flex="none" class="login-icon" layout layout-align="center center">
+                        <img src=".\public\assets\img\icons\png\password.png">
+                    </div>
+                    <input type="password" placeholder="Password" ng-required="true" ng-model="user.password">
+                </div>
+                <div flex="none" class="login-button" layout layout-align="start stretch">
+                    <md-button type="submit" class="login-submit-button" ng-disabled="loginForm.$error.required.length > 0" flex="none"> Login </md-button>
+                </div>
+            </form>
+        </div>
+        <div flex="none" ></div>
+    </div>
+    <div flex hide-xs flex-sm="25"></div>
+</div>

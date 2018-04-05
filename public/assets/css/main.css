@@ -627,69 +627,117 @@ md-grid-tile-header.widget div.widget-grid-header {
 
 /* modal */
 input[type="text"], input[type="email"], textarea {
-        border: 1px solid rgba(200,200,200,1);
-        border-radius: 5px;
-        padding: 10px;
-        color: rgba(100,100,100,1);
-    }
-    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-        border: 2.5px solid rgba(150,150,150,1);
-        border-radius: 5px;
-        padding: 10px;
-        color: rgba(80,80,80,1);
-    }
-    .dialog-heading {
-        background-color: rgba(244, 67, 54, .85);
-        font-size: 3vh;
-        font-weight: bolder;
-        color: white;
-    }
-    .dialog-content.contact {
-        background-color: rgba(244, 67, 54, .85);
-        /* border: 1.0px solid rgba(150,150,150,1); */
-        border: none !important;
-        margin: 0 !important;
-        outline: none !important;
-        padding:10px;
-        margin: 5px;
-        color: white;
-        text-align: center;
-        text-transform: capitalize;
-    }
-    .dialog-content.contact div.icon > span{
-        width: 75px;
-        height: 75px;
-        background: rgba(255,255,255,.1);
-        border-radius:100%;
-        color: rgba(255,255,255,1);
-        font-size: calc(32px + .2vw);
-    }
-    .dialog-content > div > .content-wrapper {
-        /* border: 1.0px solid rgba(150,150,150,1); */
-        padding:10px;
-        margin: 5px;
-    }
-    .dialog-content > div > .content-wrapper > div > .input-div {
-        height: 60px;
-        padding-bottom: 10px;
-    }
-    .dialog-content > div > .content-wrapper > div > .textarea-div {
-        height: 70px;
-        padding-bottom: 10px;
-    }
-    .dialog-content > div > .content-wrapper > div > .custom-textarea-div {
-        padding-bottom: 10px;
-    }
-    .dialog-content > div > .content-wrapper > div >.textarea-div > div > textarea {
-        width: 100%;
-    }
-    .dialog-content > div > .content-wrapper > div > .input-div > div > input {
-        width: 100%;
-    }
-    .submit-button {
-        background-color: rgba(34, 139, 34, 0.85) !important;
-        color: white !important
-    }
-    .header {
-        font-weight: bolder;
-    }
+    border: 1px solid rgba(200,200,200,1);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(100,100,100,1);
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border: 2.5px solid rgba(150,150,150,1);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(80,80,80,1);
+}
+.dialog-heading {
+    background-color: rgba(244, 67, 54, .85);
+    font-size: 3vh;
+    font-weight: bolder;
+    color: white;
+}
+.dialog-content.contact {
+    background-color: rgba(244, 67, 54, .85);
+    /* border: 1.0px solid rgba(150,150,150,1); */
+    border: none !important;
+    margin: 0 !important;
+    outline: none !important;
+    padding:10px;
+    margin: 5px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+}
+.dialog-content.contact div.icon > span{
+    width: 75px;
+    height: 75px;
+    background: rgba(255,255,255,.1);
+    border-radius:100%;
+    color: rgba(255,255,255,1);
+    font-size: calc(32px + .2vw);
+}
+.dialog-content > div > .content-wrapper {
+    /* border: 1.0px solid rgba(150,150,150,1); */
+    padding:10px;
+    margin: 5px;
+}
+.dialog-content > div > .content-wrapper > div > .input-div {
+    height: 60px;
+    padding-bottom: 10px;
+}
+.dialog-content > div > .content-wrapper > div > .textarea-div {
+    height: 70px;
+    padding-bottom: 10px;
+}
+.dialog-content > div > .content-wrapper > div > .custom-textarea-div {
+    padding-bottom: 10px;
+}
+.dialog-content > div > .content-wrapper > div >.textarea-div > div > textarea {
+    width: 100%;
+}
+.dialog-content > div > .content-wrapper > div > .input-div > div > input {
+    width: 100%;
+}
+.submit-button {
+    background-color: rgba(34, 139, 34, 0.85) !important;
+    color: white !important
+}
+.header {
+    font-weight: bolder;
+}
+
+/* login */
+.login-panel {
+    height: 400px; 
+    background-color: rgba(225,225,225,0.5);
+}
+.login-panel > .login-header {
+    padding-top: 10px;
+    height: 100px;
+    background-color: rgba(244, 67, 54, .85);
+    color: white;
+}
+.login-panel > .login-input-container > .login-input {
+    margin-top: 20px;
+    height: 50px;
+}
+.login-panel > .login-input-container > .login-button {
+    margin-top: 30px;
+    height: 60px;
+}
+.login-button > .login-submit-button {
+    background-color: rgba(73, 197, 182, 1);
+    width: 80%;
+    margin: 0 auto;
+}
+    .login-button > .login-submit-button:disabled {
+    background-color: rgba(220,220,220,1);
+}
+.login-input > .login-icon {
+    margin-left: 5%;
+    width: 12%;
+}
+.login-input > input[type='text'], .login-input > input[type='password']{
+    width: 70%;
+    background: transparent;
+    /* border: 1px solid rgba(200,200,200,1); */
+    /* border-radius: 5px; */
+    border: none;
+    border-bottom: 2px solid rgba(175,175,175,1);
+    padding: 10px;
+    color: rgba(100,100,100,1);
+    border-radius: 0px !important;
+}
+.login-input > input[type='text']:focus, .login-input > input[type='password']:focus{
+    border: none;
+    
+    border-bottom: 3px solid rgba(125,125,125,1);
+}

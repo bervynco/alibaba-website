@@ -50,6 +50,14 @@ app.factory('DataFactory', function ($http) {
                 data: data,
                 cache: false
             });
+        },
+        SignIn: function(user){
+             return $http({
+                url: "index.php/UserController/signIn",
+                method: 'POST',
+                data: user,
+                cache: false
+            });
         }
     }
 
