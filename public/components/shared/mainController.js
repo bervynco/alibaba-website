@@ -71,7 +71,7 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
     }
     setClock();
     $interval(setClock, 1000);
-
+    
     //NAVIGATION
     $scope.ChangeState = function(state) {
         $state.go(state);
@@ -107,6 +107,11 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
         innerHeight: $window.innerHeight,
         innerWidth: $window.innerWidth,
     }
+    $scope.$watch("ScreenDimension", function(newValue, oldValue){
+        $scope.ScreenDimension = newValue;
+        console.log("RESIZE:", $scope.ScreenDimension);
+        // w.off('resize');
+    });
     w.bind('resize', function() {
         $scope.ScreenDimension = {
             height: this.screen.height,
@@ -114,8 +119,11 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
             innerHeight: this.innerHeight,
             innerWidth: this.innerWidth
         };
+        $scope.$apply();
     });
+    
 
+    
     //TOGGLE NAVIGATION BAR
     $scope.ToggleNavigation = function() {
         var el = $("div.toggle-navbar.hidden");
@@ -126,5 +134,19 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
             el.removeClass("hidden");
         }
     }
-
+    
+    // $scope.beforeUnloadFlag = false;
+    // $scope.$on('onBeforeUnload', function (e, confirmation) {
+    //     if($scope.beforeUnloadFlag == false){
+    //         var navigationType = $window.performance.navigation.type;
+    //         $scope.beforeUnloadFlag = true;
+            
+    //         console.log(e.keyCode);
+    //         if(e.keyCode != 116){
+    //             DataFactory.SignOut().then(function(response){
+    //             });
+    //         }
+            
+    //     }
+    // });
 });

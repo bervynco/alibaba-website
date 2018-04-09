@@ -12,8 +12,8 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 			parent: "",
 			data: {},
 			url: "/auth",
-			templateUrl: "public/components/modules/auth/auth.html",
-			controller: "MainController"
+			templateUrl: "public/components/modules/auth/auth.html"
+			// controller: "MainController"
 		})
 		.state("site", {
 			abstract: "true",

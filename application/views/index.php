@@ -99,7 +99,7 @@
 	<script src="public/components/modules/modals/modalController.js"></script>
 
 </head>
-<body ng-app="MainApplication" ng-controller="MainController" class="scroll" layout="column" layout-align="start stretch" ng-cloak>
+<body ng-app="MainApplication" ng-controller="MainController" class="scroll" layout="column" layout-align="start stretch" ng-cloak onbeforeunload="confirmExt()">
 	<!-- START:WEBPAGE NAVIGATION -->
 	<div flex="none" layout layout-align="start stretch" class="site-navigation element-fixed">
 		<navigation></navigation>

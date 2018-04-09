@@ -7,5 +7,11 @@ class user_model extends CI_Model {
             ->get('user');
         return $query->num_rows();
     }
+
+    function signOut($encryptedString){
+        $query = $this->db->set('token', $encryptedString)->insert('session');
+
+        // return $query->insert_id();
+    }
 }
 ?>

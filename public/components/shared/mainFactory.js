@@ -5,7 +5,23 @@ app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.headers.put = {};
     $httpProvider.defaults.headers.patch = {};
 }]);
-
+// app.factory('beforeUnload', function ($rootScope, $window) {
+//     // Events are broadcast outside the Scope Lifecycle
+    
+//     $window.onbeforeunload = function (e) {
+//         var confirmation = {};
+        
+//         var event = $rootScope.$broadcast('onBeforeUnload', confirmation);
+//         if (event.defaultPrevented) {
+//             return confirmation.message;
+//         }
+//     };
+    
+//     return {};
+// })
+// app.run(function (beforeUnload) {
+//     // Must invoke the service at least once
+// });
 app.factory('DataFactory', function ($http) {
 
     return {
@@ -52,10 +68,17 @@ app.factory('DataFactory', function ($http) {
             });
         },
         SignIn: function(user){
-             return $http({
+            return $http({
                 url: "index.php/UserController/signIn",
                 method: 'POST',
                 data: user,
+                cache: false
+            });
+        },
+        SignOut: function(){
+             return $http({
+                url: "index.php/UserController/signOut",
+                method: 'POST',
                 cache: false
             });
         }

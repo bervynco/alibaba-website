@@ -68,7 +68,6 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 			}
 		});
 	}
-
 });
 
 homeModule.controller('ProductsController', function($location, $scope, $state, $stateParams, $window, productsData, $mdDialog) {
@@ -176,7 +175,9 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 				overall_id: i.overall_id
 			});
 		});
-		if($scope.$parent.ScreenDimension.width < 400)
+		
+		console.log($scope.ScreenDimension);
+		if($scope.ScreenDimension.innerWidth < 400)
 		{
 			$scope.Products = _.chunk(arr, 1);
 		}	

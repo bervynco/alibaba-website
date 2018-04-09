@@ -7,7 +7,10 @@ LoginModule.controller('LoginController', function($location, $scope, $state, $w
     }
     $scope.signIn = function(){
         DataFactory.SignIn($scope.user).success(function(response){
-            console.log("RESPONSE: ", response);
+            var object = {'creds': response};
+            if(response != null){
+                sessionStorage.setItem('user', JSON.stringify(object));
+            }
         }).error(function(error){
 
         });
