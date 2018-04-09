@@ -12,7 +12,10 @@ LoginModule.controller('LoginController', function($location, $scope, $state, $w
                 sessionStorage.setItem('user', JSON.stringify(object));
             }
             $state.go('home');
-            $window.location.reload();
+            setTimeout(function(){ 
+                $window.location.reload();
+            }, 500);
+            // $window.location.reload();
         }).error(function(error){
 
         });
