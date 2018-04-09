@@ -541,7 +541,8 @@ md-grid-tile-header.widget div.widget-grid-header {
 .grid-list-box .body {
     transition: .4s;
     background: no-repeat center center;
-    background-size: cover;
+    background-size: contain;
+    /* width: 50%; */
 }
 
 

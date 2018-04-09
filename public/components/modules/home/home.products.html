@@ -25,7 +25,7 @@
                     <div class="" flex layout layout-align>
                         <div class="grid-list scroll" flex layout-align layout-padding>
                             <div class="grid-list-row" flex layout layout-align ng-repeat="x in Products">
-                                <div class="grid-list-item" flex="25" layout layout-align ng-repeat="(l,m) in x" ng-if="SelectedProductCategory=='all'||SelectedProductCategory==x[$index].category">
+                                <div class="grid-list-item" flex layout layout-align ng-repeat="(l,m) in x" ng-if="SelectedProductCategory=='all'||SelectedProductCategory==x[$index].category">
                                     <div class="grid-list-box" flex layout="column" layout-align>
                                         <div class="body" flex layout layout-align ng-style="{'background-image':'url({{m.image}})'}"> <!--ng-style="{'background-image':'url({{m.image}})'}"-->
                                             <!-- <img src="{{m.image}}" width="200"> -->

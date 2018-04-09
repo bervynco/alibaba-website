@@ -176,8 +176,13 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 				overall_id: i.overall_id
 			});
 		});
-		$scope.Products = _.chunk(arr, 4);
-		console.log($scope.Products);
+		if($scope.$parent.ScreenDimension.width < 400)
+		{
+			$scope.Products = _.chunk(arr, 1);
+		}	
+		else{
+			$scope.Products = _.chunk(arr, 4);
+		}	
 	}
 
 	// Set Product Categories
