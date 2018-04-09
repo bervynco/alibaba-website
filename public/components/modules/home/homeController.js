@@ -90,31 +90,35 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 
 	var sample = [{
 		"category": "food",
+		"name": "Alibaba Corn Chips - Barbeque - Small",
 		"content_id": "1",
 		"description": "1",
 		"id": "1",
-		"image": "assets/img/logo/default/placeholder.png",
+		"image": "assets/img/logo/sample/alibaba-barbeque-small.png",
 		"overall_id": "1"
 	}, {
 		"category": "food",
+		"name": "Alibaba Corn Chips - Barbeque - Large",
 		"content_id": "2",
 		"description": "2",
 		"id": "2",
-		"image": "assets/img/logo/default/placeholder.png",
+		"image": "assets/img/logo/sample/alibaba-barbeque-large.png",
 		"overall_id": "2"
 	}, {
 		"category": "food",
+		"name": "Alibaba Corn Chips - Sweet Corn - Small",
 		"content_id": "3",
 		"description": "3",
 		"id": "3",
-		"image": "assets/img/logo/default/placeholder.png",
+		"image": "assets/img/logo/sample/alibaba-sweetcorn-small.png",
 		"overall_id": "3"
 	}, {
 		"category": "stuff",
+		"name": "Alibaba Corn Chips - Sweet Corn - Large",
 		"content_id": "4",
 		"description": "4",
 		"id": "4",
-		"image": "assets/img/logo/default/placeholder.png",
+		"image": "assets/img/logo/sample/alibaba-sweetcorn-large.png",
 		"overall_id": "4"
 	}, {
 		"category": "merch",
@@ -219,6 +223,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 
 	function LoadPage() {
 		// GetProducts($scope.DrilldownData.body);
+		
 		GetProducts(sample);
 		GetProductCategories(sample);
 	}
