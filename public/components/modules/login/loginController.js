@@ -11,6 +11,8 @@ LoginModule.controller('LoginController', function($location, $scope, $state, $w
             if(response != null){
                 sessionStorage.setItem('user', JSON.stringify(object));
             }
+            $state.go('home');
+            $window.location.reload();
         }).error(function(error){
 
         });

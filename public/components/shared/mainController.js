@@ -152,4 +152,5 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
             
     //     }
     // });
+    $scope.CheckSession();
 });
