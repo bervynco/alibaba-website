@@ -135,6 +135,9 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
         }
     }
     
+    $scope.CheckSession = function(){
+        $scope.user = JSON.parse(sessionStorage.getItem("user"));
+    }
     // $scope.beforeUnloadFlag = false;
     // $scope.$on('onBeforeUnload', function (e, confirmation) {
     //     if($scope.beforeUnloadFlag == false){

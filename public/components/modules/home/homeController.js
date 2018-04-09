@@ -3,6 +3,8 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 	window.scroll(0, 0);
 
 	$scope.PageData = siteData;
+	//Check Session Data
+	$scope.CheckSession();
 	//Drilldown
 	$scope.GoToDrilldown = function(data, link) {
 		$state.go(link, data);
@@ -75,7 +77,9 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	$scope.displayProduct = false;
 	$scope.Products = [];
 	$scope.ProductCategory = [];
-	console.log($scope.DrilldownData);
+	
+	//Check Session Data
+	$scope.CheckSession();
 
 	$scope.ProductSearch = function(item) {
 		if ($scope.ProductSearchInput == undefined)
@@ -239,9 +243,13 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 
 homeModule.controller('ProcessController', function($location, $scope, $state, $stateParams, $window, processData) {
 	$scope.DrilldownData = processData[0];
+	//Check Session Data
+	$scope.CheckSession();
 });
 
 homeModule.controller('VisionController', function($location, $scope, $state, $stateParams, $window, visionData, $mdDialog) {
+	//Check Session Data
+	$scope.CheckSession();
 	$scope.DrilldownData = visionData[0];
 	$scope.EditVisionMissionData = function(data, ev) {
 		$mdDialog.show({

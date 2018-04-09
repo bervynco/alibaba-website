@@ -5,8 +5,10 @@
                 <div flex layout layout-align="start center">
                     <span flex></span>
                     <span flex style="height: 100%; font-size: calc(14px + 1vw); color: rgba(255,255,255,1); font-weight: bolder; letter-spacing: .25vw; text-transform: uppercase;" layout layout-align="start center" layout-padding>{{DrilldownData.title}}</span>
-                    <span>
-                        <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button>
+                    <span ng-if="user != null">
+                        <md-button class="md-raised" hide show-gt-sm flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button>
+						<md-button class="md-raised" hide show-sm show-xs flex ng-click="EditProducts(DrilldownData, $event)"> <i class="fa fa-edit"></i> </md-button>
+                        <!-- <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button> -->
                     </span>
                 </div>
             </div>
