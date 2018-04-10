@@ -181,7 +181,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 		});
 		
 		console.log($scope.ScreenDimension);
-		if($scope.ScreenDimension.innerWidth < 400)
+		if($scope.ScreenDimension.innerWidth < 600)
 		{
 			$scope.Products = _.chunk(arr, 1);
 		}	
