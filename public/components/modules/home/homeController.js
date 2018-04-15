@@ -74,6 +74,7 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 
 homeModule.controller('ProductsController', function($location, $scope, $state, $stateParams, $window, productsData, $mdDialog) {
 	$scope.DrilldownData = productsData[0];
+	console.log(productsData[0]);
 	$scope.displayProduct = false;
 	$scope.Products = [];
 	$scope.ProductCategory = [];
@@ -91,81 +92,81 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 		return false;
 	}
 
-	var sample = [{
-		"category": "food",
-		"name": "Alibaba Corn Chips - Barbeque - Small",
-		"content_id": "1",
-		"description": "1",
-		"id": "1",
-		"image": "assets/img/logo/sample/alibaba-barbeque-small.png",
-		"overall_id": "1"
-	}, {
-		"category": "food",
-		"name": "Alibaba Corn Chips - Barbeque - Large",
-		"content_id": "2",
-		"description": "2",
-		"id": "2",
-		"image": "assets/img/logo/sample/alibaba-barbeque-large.png",
-		"overall_id": "2"
-	}, {
-		"category": "food",
-		"name": "Alibaba Corn Chips - Sweet Corn - Small",
-		"content_id": "3",
-		"description": "3",
-		"id": "3",
-		"image": "assets/img/logo/sample/alibaba-sweetcorn-small.png",
-		"overall_id": "3"
-	}, {
-		"category": "stuff",
-		"name": "Alibaba Corn Chips - Sweet Corn - Large",
-		"content_id": "4",
-		"description": "4",
-		"id": "4",
-		"image": "assets/img/logo/sample/alibaba-sweetcorn-large.png",
-		"overall_id": "4"
-	}, {
-		"category": "merch",
-		"content_id": "5",
-		"description": "5",
-		"id": "5",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "5"
-	}, {
-		"category": "food",
-		"content_id": "6",
-		"description": "6",
-		"id": "6",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "6"
-	}, {
-		"category": "food",
-		"content_id": "7",
-		"description": "7",
-		"id": "7",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "7"
-	}, {
-		"category": "merch",
-		"content_id": "8",
-		"description": "8",
-		"id": "8",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "8"
-	}, {
-		"category": "food",
-		"content_id": "9",
-		"description": "9",
-		"id": "9",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "9"
-	}, {
-		"category": "merch",
-		"content_id": "10",
-		"description": "10",
-		"id": "10",
-		"image": "assets/img/logo/default/placeholder.png",
-		"overall_id": "10"
-	}];
+	// var sample = [{
+	// 	"category": "food",
+	// 	"name": "Alibaba Corn Chips - Barbeque - Small",
+	// 	"content_id": "1",
+	// 	"description": "1",
+	// 	"id": "1",
+	// 	"image": "assets/img/logo/sample/alibaba-barbeque-small.png",
+	// 	"overall_id": "1"
+	// }, {
+	// 	"category": "food",
+	// 	"name": "Alibaba Corn Chips - Barbeque - Large",
+	// 	"content_id": "2",
+	// 	"description": "2",
+	// 	"id": "2",
+	// 	"image": "assets/img/logo/sample/alibaba-barbeque-large.png",
+	// 	"overall_id": "2"
+	// }, {
+	// 	"category": "food",
+	// 	"name": "Alibaba Corn Chips - Sweet Corn - Small",
+	// 	"content_id": "3",
+	// 	"description": "3",
+	// 	"id": "3",
+	// 	"image": "assets/img/logo/sample/alibaba-sweetcorn-small.png",
+	// 	"overall_id": "3"
+	// }, {
+	// 	"category": "stuff",
+	// 	"name": "Alibaba Corn Chips - Sweet Corn - Large",
+	// 	"content_id": "4",
+	// 	"description": "4",
+	// 	"id": "4",
+	// 	"image": "assets/img/logo/sample/alibaba-sweetcorn-large.png",
+	// 	"overall_id": "4"
+	// }, {
+	// 	"category": "merch",
+	// 	"content_id": "5",
+	// 	"description": "5",
+	// 	"id": "5",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "5"
+	// }, {
+	// 	"category": "food",
+	// 	"content_id": "6",
+	// 	"description": "6",
+	// 	"id": "6",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "6"
+	// }, {
+	// 	"category": "food",
+	// 	"content_id": "7",
+	// 	"description": "7",
+	// 	"id": "7",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "7"
+	// }, {
+	// 	"category": "merch",
+	// 	"content_id": "8",
+	// 	"description": "8",
+	// 	"id": "8",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "8"
+	// }, {
+	// 	"category": "food",
+	// 	"content_id": "9",
+	// 	"description": "9",
+	// 	"id": "9",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "9"
+	// }, {
+	// 	"category": "merch",
+	// 	"content_id": "10",
+	// 	"description": "10",
+	// 	"id": "10",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"overall_id": "10"
+	// }];
 
 	function GetProducts(obj) {
 		var arr = [];
@@ -186,7 +187,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 			$scope.Products = _.chunk(arr, 1);
 		}	
 		else{
-			$scope.Products = _.chunk(arr, 4);
+			$scope.Products = _.chunk(arr, 3);
 		}	
 	}
 
@@ -234,8 +235,8 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	function LoadPage() {
 		// GetProducts($scope.DrilldownData.body);
 		
-		GetProducts(sample);
-		GetProductCategories(sample);
+		GetProducts($scope.DrilldownData.body);
+		GetProductCategories($scope.DrilldownData.body);
 	}
 	// Initialize Page
 	LoadPage();

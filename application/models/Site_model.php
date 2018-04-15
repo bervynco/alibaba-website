@@ -23,7 +23,7 @@ class site_model extends CI_Model {
     }
 
     function selectProductData($overallID, $contentID){
-        $query = $this->db->select(array('id', 'overall_id', 'content_id', 'name', 'description', 'image'))
+        $query = $this->db->select(array('id', 'overall_id', 'content_id', 'name', 'category', 'description', 'image'))
                 ->where('overall_id', $overallID)
                 ->where('content_id', $contentID)
                 ->get('body');
