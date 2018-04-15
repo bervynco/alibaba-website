@@ -87,7 +87,10 @@ colors
     background: url(../img/logo/client/client-logo.jpg) center center no-repeat;
     background-size: cover;
 }
-
+.footer-logo-client {
+    background: url(../img/logo/client/client-logo.png) center center no-repeat;
+    background-size: cover;
+}
 .site-navigation-link, .toggle-navbar .site-navigation-link {
     border: none;
     border-top: 10px solid;
@@ -740,4 +743,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border: none;
     
     border-bottom: 3px solid rgba(125,125,125,1);
+}
+
+.website-footer {
+    font-size: calc(8px + .25vw);
+    /* color: rgba(200,200,200); */
+    color: white;
+}
+.website-footer-details {
+    font-size: calc(10px + .25vw);
+    font-weight: bold;
+    color: white
 }
