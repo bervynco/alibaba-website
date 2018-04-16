@@ -2,8 +2,8 @@
     <div class="content">
         <div class="layer-content" flex layout="column" layout-align>
             <div class="header element-fixed" flex="15" layout layout-align="center stretch">
-                <span>{{DrilldownData.title}}</span>
-                <span ng-if="user != null">
+                <span layout layout-align="center center">{{DrilldownData.title}}</span>
+                <span ng-if="user != null" layout layout-align="center center">
                     <md-button class="md-raised" hide show-gt-md flex ng-click="EditProcess(DrilldownData, $event)"> Edit Content </md-button>
                     <md-button class="md-raised" hide show-md show-sm show-xs flex ng-click="EditProcess(DrilldownData, $event)"> <i class="fa fa-edit"></i> </md-button>
                     <!-- <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button> -->
