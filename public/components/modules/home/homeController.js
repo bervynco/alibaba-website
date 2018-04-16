@@ -10,16 +10,16 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 		$state.go(link, data);
 	}
 
-	console.log($scope.PageData[0].content);
-	var sampCarousel = [{
-		"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
-		"image": "assets/img/logo/default/placeholder.png",
-		"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
-	}, {
-		"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
-		"image": "assets/img/logo/default/placeholder.png",
-		"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
-	}];
+	console.log("CONTENT:", $scope.PageData[0].content[0]);
+	// var sampCarousel = [{
+	// 	"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
+	// }, {
+	// 	"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
+	// 	"image": "assets/img/logo/default/placeholder.png",
+	// 	"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
+	// }];
 
     $scope.OpenContact = function(title, value, ev) {
         var input = {type:title, info: value};

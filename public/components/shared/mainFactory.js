@@ -43,6 +43,14 @@ app.factory('DataFactory', function ($http) {
         MainFactorySample: function () {
             return "From Main Factory";
         },
+        UpdateTitleDetails: function(data){
+            return $http({
+                url: "index.php/SiteController/updateTitleInfo",
+                method: 'POST',
+                data: data,
+                cache: false
+            });
+        },
         UpdateContactDetails: function(contact){
             return $http({
                 url: "index.php/SiteController/updateContactInfo",

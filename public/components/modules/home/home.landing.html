@@ -9,8 +9,8 @@
 						<div flex layout layout-align="end stretch">
 							<div flex="90" flex-sm="85" flex-xs="85" layout layout-align="center center"></div>
 							<div flex layout layout-align="center center" ng-if="user != null">
-								<md-button class="md-raised" hide show-gt-md flex ng-click="EditTitle(PageData[0].content, $event)"> Edit Content </md-button>
-								<md-button class="md-raised" hide show-sm show-xs show-md flex ng-click="EditTitle(PageData[0].content, $event)"> <i class="fa fa-edit"></i> </md-button>
+								<md-button class="md-raised" hide show-gt-md flex ng-click="EditTitle(PageData[0].content[0], $event)"> Edit Content </md-button>
+								<md-button class="md-raised" hide show-sm show-xs show-md flex ng-click="EditTitle(PageData[0].content[0], $event)"> <i class="fa fa-edit"></i> </md-button>
 							</div>
 						</div>
 						<!-- <div flex="70" layout layout-align>
@@ -20,7 +20,7 @@
 						<div flex="70" layout layout-align>
 							<div flex="30" flex-md="25" flex-sm="5" flex-xs="0"></div>
 							<div flex layout="column" layout-align>
-								<div flex layout="column" layout-align ng-repeat="data in PageData[0].content">
+								<div flex layout="column" layout-align ng-repeat="data in PageData[0].content[0]">
 									<div flex="40" layout layout-align="center end">
 										<span class="header">{{data.title}}</span>
 									</div>
@@ -81,10 +81,10 @@
 					<div class="section-contact layer-content" flex layout="column" layout-align>
 						<div flex="10" layout layout-align="end stretch">
 							<div flex="90" flex-sm="85" flex-xs="85" layout layout-align="center center"></div>
-							<div flex layout layout-align="center center">
+							<!-- <div flex layout layout-align="center center">
 								<md-button class="md-raised" hide show-gt-sm flex ng-click="EditContact(PageData[2], $event)"> Edit Content </md-button>
 								<md-button class="md-raised" hide show-sm show-xs flex ng-click="EditContact(PageData[2], $event)"> <i class="fa fa-edit"></i> </md-button>
-							</div>
+							</div> -->
 						</div>
 						<div flex layout layout-align>
 							<div class="contact-container" flex layout="column" layout-align>

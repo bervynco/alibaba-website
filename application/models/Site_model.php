@@ -6,9 +6,9 @@ class site_model extends CI_Model {
         return($query->num_rows() > 0) ? $query->result_array(): array();
     }
     function selectHomeData($id){
-        $query = $this->db->select(array('title', 'body', 'image'))->where('id', $id)->get('home');
-        return $query->first_row();
-        // return($query->num_rows() > 0) ? $query->result_array(): array();
+        $query = $this->db->select(array('id','title', 'body', 'image'))->get('home');
+        // return $query->first_row();
+        return($query->num_rows() > 0) ? $query->result_array(): array();
     }
 
     function selectContactData($id){
@@ -60,6 +60,29 @@ class site_model extends CI_Model {
         return($query->num_rows() > 0) ? $query->result_array(): array();
     }
 
+    function insertTitle($detail){
+        $query = $this->db->insert(
+                                'home', 
+                                array(
+                                    'title' => $detail['title'],
+                                    'body' => $detail['body'],
+                                    'image' => $detail['image']
+                                )
+                            );
+        return $this->db->insert_id();
+    }
+    function updateTitle($detail){
+        $query = $this->db->where('id', $detail['id'])
+                          ->update(
+                                'home', 
+                                array(
+                                    'title' => $detail['title'],
+                                    'body' => $detail['body'],
+                                    'image' => $detail['image']
+                                )
+                            );
+        return $this->db->affected_rows();
+    }
     function updateContactInfo($detail){
         $query = $this->db->where('id', $detail['id'])
                           ->update(
@@ -105,6 +128,10 @@ class site_model extends CI_Model {
         $data['content_id'] = $contentID;
         $query = $this->db->insert('body', $data);
         return $this->db->insert_id();
+    }
+
+    function truncateTable($table){
+        return $this->db->truncate($table);
     }
 }
 ?>

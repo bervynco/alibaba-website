@@ -12,6 +12,20 @@ homeModule.controller('ModalController', function($location,$scope, $state, $win
         $mdDialog.hide();
     }
 
+    $scope.titleDetails = function(){
+        console.log("TITLE DETAILS");
+        DataFactory.UpdateTitleDetails($scope.data).success(function(response){
+            if(response == "Successful"){
+                $mdDialog.hide("Successful");
+            }
+            else {
+                $scope.status = "Error updating title info";
+            }
+        }).error(function(error){
+
+        });
+    }
+
     $scope.UpdateProductDetails = function(){
         DataFactory.UpdateProductDetails($scope.data).success(function(response){
             if(response == "Successful"){
