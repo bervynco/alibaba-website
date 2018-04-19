@@ -171,7 +171,7 @@ colors
     height: 600px;
     background-attachment: fixed;
     background-blend-mode: color-dodge;
-    background-image: url(../img/logo/default/placeholder.png);
+    /* background-image: url(../img/logo/default/placeholder.png); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

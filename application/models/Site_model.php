@@ -126,10 +126,16 @@ class site_model extends CI_Model {
     function insertNewProduct($data, $overallID, $contentID){
         $data['overall_id'] = $overallID;
         $data['content_id'] = $contentID;
+        if(isset($data['id'])){
+            unset($data['id']);
+        }
         $query = $this->db->insert('body', $data);
         return $this->db->insert_id();
     }
 
+    function deleteProduct($table, $id) {
+        return $this->db->where('id', $id)->delete($table);
+    }
     function truncateTable($table){
         return $this->db->truncate($table);
     }

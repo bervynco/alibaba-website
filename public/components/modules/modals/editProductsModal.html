@@ -10,7 +10,7 @@
     </div>
     <div flex class="dialog-content" layout="column" layout-align="start stretch" layout-padding>
         <div flex="90" layout="column" layout-align="start stretch" class="scroll">
-            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="product in data.body" class="content-wrapper" style="height:200px;">
+            <div flex="none" layout="row" layout-align="start stretch" ng-repeat="product in data.body track by $index" class="content-wrapper" style="height:200px;">
                 <div flex="90" layout="column" layout-align="start stretch">
                     <div flex layout="row" layout-align="start stretch" class="input-div">
                         <div flex="30" layout layout-align="start center" class=" header" layout-padding>
@@ -37,7 +37,14 @@
                         </div>
                     </div>
                 </div>
-                <div flex="10"></div>
+                <div flex="10" layout layout-align="center stretch" ng-click="RemoveProduct($index)">
+                    <div flex layout layout-align="center center">
+                        <md-tooltip md-direction="top">Delete this content</md-tooltip>
+                        <img src=".\public\assets\img\icons\png\close.png">
+                    </div>
+                    <!-- <md-tooltip>Delete this content </md-tooltip> -->
+                    
+                </div>
             </div>
             <div flex="10" layout layout-align="start stretch">
                 <div flex></div>
@@ -49,10 +56,10 @@
         </div>
         <div flex="10" layout layout-align="end stretch">
             <div flex></div>
-            <div flex="10" layout layout-align="end stretch">
+            <div flex="10" layout layout-align="start stretch">
                 <md-button ng-click="Close()"> Cancel </md-button>
             </div>
-            <div flex="10" layout layout-align="end stretch">
+            <div flex="10" layout layout-align="start stretch">
                 <md-button class="md-raised  background--red" ng-click="UpdateProductDetails()"> Update </md-button>
             </div>
         </div>

@@ -1,12 +1,12 @@
 <div flex layout layout-align>
     <div class="site-navigation wrapper" flex layout layout-align>
         <div flex="10" flex-md="15" flex-sm="20" flex-xs="25" layout layout-align layout-padding>
-            <div class="site-navigation-logo-client" flex layout layout-align></div>
+            <div class="site-navigation-logo-client" flex layout layout-align ng-click="ChangeState('home')" style="cursor:pointer"></div>
         </div>
         <div flex-xl="50" flex-lg="40" flex-md="30" flex-sm flex-xs></div>
         <div class="toggle-navbar-button" flex="10" layout layout-align="center center" layout-padding hide show-sm show-xs ng-click="ToggleNavigation()"><span class="fa fa-navicon"></span></div>
          <div flex layout layout-align hide show-gt-sm>
-            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('home')"><span>overview</span></div>
+            <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('home')"ng-click="ChangeState('home')"><span>overview</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('aboutus')" ><span>about us</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="ChangeState('products')"><span>products</span></div>
             <div class="site-navigation-link" flex layout layout-align="center center" ng-click="GoToTag('contactus')"><span>contact</span></div>

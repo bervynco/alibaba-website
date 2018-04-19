@@ -138,6 +138,7 @@ class SiteController extends CI_Controller
 
         foreach($postData['body'] as $index => $body){
             $id = (int) $body['id'];
+            
             if($id == 0){
                 // INSERT
                 $updateInfo = $this->site_model->insertNewProduct($body, $postData['overall_id'], $postData['id']);
@@ -146,8 +147,10 @@ class SiteController extends CI_Controller
                 }
             }
             else {
+                $affectedRows = $this->site_model->deleteProduct("body", $id);
+                // print_r($affectedRows);
                 // UPDATE
-                $insertInfo = $this->site_model->updateProductInfo($body, $postData['overall_id'], $postData['id']);
+                $insertInfo = $this->site_model->insertNewProduct($body, $postData['overall_id'], $postData['id']);
                 if($insertInfo == 0){
                     $errorFlag = 1;
                 }
