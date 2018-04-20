@@ -245,12 +245,14 @@ colors
 }
 
 .section-about.layer-content .box-container {
-    background-image: url(../img/logo/default/placeholder.png);
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: center center no-repeat;
     background-size: cover;
     /* background-size: 100%; */
     transition: .5s;
+	border: 1px solid rgba(0,0,0,.2);
+}
+.section-about.layer-content .box-container:first-of-type {
+	background-size: cover;
 }
 .section-about.layer-content .box-container:hover {
     /* background-size: 110%; */
@@ -260,13 +262,17 @@ colors
 }
 
 .section-about.layer-content .box-container .title {
-    background: rgba(50, 50, 50, .1);
+    background: rgba(27, 27, 27, .9);
     font-weight: bolder;
     letter-spacing: 1px;
     text-transform: uppercase;
+	color: rgba(255,255,255,1);
+	transition: .4s;
 }
 
 .section-about.layer-content .box-container .title:hover {
+	background: rgba(50, 50, 50, .9);
+	transition: .4s;
     cursor: pointer;
 }
 /*contact*/

@@ -40,14 +40,14 @@
 					<div class="section-about layer-content" flex layout="column" layout-align>
 						<div flex="30" flex-md="20" flex-sm="10" flex-xs="5" layout layout-align="center center"><span class="header"><text class="dark-grey text">about </text> <text class="red text">us</text></span></div>
 						<div flex layout-sm="row" layout-xs="column" layout layout-align layout-padding>
-							<div flex="10" flex-md="5" flex-sm="10" flex-xs="0"></div>
-							<div flex layout layout-align ng-repeat="x in PageData[1].content">
-								<div class="box-container" flex layout="column" layout-align>
+							<div flex="20" flex-md="5" flex-sm="10" flex-xs="0"></div>
+							<div flex layout layout-align ng-repeat="x in PageData[1].content track by $index">
+								<div class="box-container" flex layout="column" layout-align  ng-style="{'background-image': 'url({{aboutImages[$index]}})'}">
 									<div class="" flex layout layout-align></div>
 									<div class="title dark-grey text" flex="20" flex-sm="30" flex-xs="40" layout layout-align="center center" ng-click="GoToDrilldown(x,x.link)"><span>{{x.title}}</span></div>
 								</div>
 							</div>
-							<div flex="10" flex-md="5" flex-sm="10" flex-xs="0"></div>
+							<div flex="20" flex-md="5" flex-sm="10" flex-xs="0"></div>
 						</div>
 						<div flex="15" flex-sm="5" flex-xs="5"></div>
 					</div>
