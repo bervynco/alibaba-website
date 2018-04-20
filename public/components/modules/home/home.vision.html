@@ -6,7 +6,7 @@
                 <div flex="15" layout layout-align layout-padding>
                     <div flex layout layout-align="start center">
                         <span flex></span>
-                        <span flex style="height: 100%; font-size: calc(14px + 1vw); color: rgba(255,255,255,1); font-weight: bolder; letter-spacing: .25vw; text-transform: uppercase;" layout layout-align="start center" layout-padding>{{DrilldownData.title}}</span>
+                        <!-- <span flex style="height: 100%; font-size: calc(14px + 1vw); color: rgba(255,255,255,1); font-weight: bolder; letter-spacing: .25vw; text-transform: uppercase;" layout layout-align="start center" layout-padding>{{DrilldownData.title}}</span> -->
                         <span ng-if="user != null">
                             <md-button class="md-raised" hide show-gt-md flex ng-click="EditVisionMissionData(DrilldownData, $event)"> Edit Content </md-button>
 					<md-button class="md-raised" hide show-md show-sm show-xs flex ng-click="EditVisionMissionData(DrilldownData, $event)"> <i class="fa fa-edit"></i> </md-button>
@@ -14,13 +14,14 @@
                         </span>
                     </div>
                 </div>
-               
-                <div flex="30" layout layout-align ng-repeat="data in DrilldownData.body">
-                    <div flex="30" flex-xs="0"></div>
+
+                <div flex="30" layout layout-align>
+                <!-- <div flex="30" layout layout-align ng-repeat="data in DrilldownData.body"> -->
+                    <div flex="25" flex-xs="0"></div>
                     <div class="box-container" flex layout="column" layout-align>
-                        <div class="subtitle text-center" flex layout layout-align><span layout layout-align>{{data.description}}</span></div>
+                        <div class="subtitle text-center"  ng-repeat="data in DrilldownData.body"><span layout layout-align >{{data.description}}</span><br><br></div>
                     </div>
-                    <div flex="30" flex-xs="0"></div>
+                    <div flex="25" flex-xs="0"></div>
                 </div>
                 <div flex></div>
             </div>

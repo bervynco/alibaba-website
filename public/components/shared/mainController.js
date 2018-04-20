@@ -1,4 +1,4 @@
-var app = angular.module('MainApplication', ['ngAnimate', 'ngMaterial', 'MainRouter', 'AuthModule', 'HomeModule', 'SettingsModule', 'LoginModule', 'angular-momentjs', 'jkAngularCarousel']);
+var app = angular.module('MainApplication', ['ngAnimate', 'ngMaterial', 'MainRouter', 'AuthModule', 'HomeModule', 'SettingsModule', 'LoginModule', 'angular-momentjs']);
 app.config(function($momentProvider) {
     $momentProvider
         .asyncLoading(true)
@@ -71,7 +71,7 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
     }
     setClock();
     $interval(setClock, 1000);
-    
+
     //NAVIGATION
     $scope.ChangeState = function(state) {
         $state.go(state);
@@ -121,9 +121,9 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
         };
         $scope.$apply();
     });
-    
 
-    
+
+
     //TOGGLE NAVIGATION BAR
     $scope.ToggleNavigation = function() {
         var el = $("div.toggle-navbar.hidden");
@@ -134,7 +134,7 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
             el.removeClass("hidden");
         }
     }
-    
+
     $scope.CheckSession = function(){
         $scope.user = JSON.parse(sessionStorage.getItem("user"));
     }
@@ -143,13 +143,13 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
     //     if($scope.beforeUnloadFlag == false){
     //         var navigationType = $window.performance.navigation.type;
     //         $scope.beforeUnloadFlag = true;
-            
+
     //         console.log(e.keyCode);
     //         if(e.keyCode != 116){
     //             DataFactory.SignOut().then(function(response){
     //             });
     //         }
-            
+
     //     }
     // });
     $scope.CheckSession();

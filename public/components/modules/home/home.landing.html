@@ -3,36 +3,32 @@
 	<div flex layout="column" layout-align>
 		<div class="site-body wrapper">
 			<!-- start:overview -->
-			
+
 			<div id="overview" class="section-overview">
 				<div class="section-overview layer-wrapper">
-					<div class="section-overview layer-content" flex layout="column" layout-align layout-padding>
-						<div flex layout layout-align="end stretch">
+					<div class="section-overview layer-content" flex layout="column" layout-align>
+						<div layout layout-align="end stretch"  ng-if="user != null">
 							<div flex="90" flex-sm="85" flex-xs="85" layout layout-align="center center"></div>
-							<div flex layout layout-align="center center" ng-if="user != null">
+							<div flex layout layout-align="center center">
 								<md-button class="md-raised" hide show-gt-md flex ng-click="EditTitle(PageData[0].content[0], $event)"> Edit Content </md-button>
 								<md-button class="md-raised" hide show-sm show-xs show-md flex ng-click="EditTitle(PageData[0].content[0], $event)"> <i class="fa fa-edit"></i> </md-button>
 							</div>
 						</div>
-						<!-- <div flex="70" layout layout-align>
-							<jk-carousel data="PageData[0].content" item-template-url="'home.carousel.html'" max-width="auto" max-height="auto" auto-slide="true" auto-slide-time="1000">
-							</jk-carousel>
-						</div> -->
-						<div flex="70" layout layout-align>
+						<div class="section-overview-carousel" flex layout layout-align  ng-repeat="data in PageData[0].content[0]" ng-if="isCurrentIndex($index)" ng-style="{'background-image': 'url({{data.image}})'}">
 							<div flex="30" flex-md="25" flex-sm="5" flex-xs="0"></div>
 							<div flex layout="column" layout-align>
-								<div flex layout="column" layout-align ng-repeat="data in PageData[0].content[0]">
-									<div flex="40" layout layout-align="center end">
-										<span class="header">{{data.title}}</span>
-									</div>
-									<div flex layout layout-align="center center">
-										<span class="subheader">{{data.body}}</span>
+								<div class="" flex layout="column" layout-align="center center">
+									<div flex layout="column" layout-align="center center">
+										<span layout layout-align="center center" class="header">{{data.title}}</span>
+									<!-- </div>
+									<div flex layout layout-align="center center"> -->
+										<span layout layout-align="center center" class="subheader">{{data.body}}</span>
 									</div>
 								</div>
 							</div>
 							<div flex="30" flex-md="25" flex-sm="5" flex-xs="0"></div>
 						</div>
-						<div flex></div>
+						<!-- <div flex></div> -->
 					</div>
 				</div>
 			</div>
@@ -80,13 +76,13 @@
 			<div id="contactus" class="section-contact">
 				<div class="section-contact layer-back">
 					<div class="section-contact layer-content" flex layout="column" layout-align>
-						<div flex="10" layout layout-align="end stretch">
-							<div flex="90" flex-sm="85" flex-xs="85" layout layout-align="center center"></div>
+						<!-- <div flex="10" layout layout-align="end stretch"> -->
+							<!-- <div flex="90" flex-sm="85" flex-xs="85" layout layout-align="center center"></div> -->
 							<!-- <div flex layout layout-align="center center">
 								<md-button class="md-raised" hide show-gt-sm flex ng-click="EditContact(PageData[2], $event)"> Edit Content </md-button>
 								<md-button class="md-raised" hide show-sm show-xs flex ng-click="EditContact(PageData[2], $event)"> <i class="fa fa-edit"></i> </md-button>
 							</div> -->
-						</div>
+						<!-- </div> -->
 						<div flex layout layout-align>
 							<div class="contact-container" flex layout="column" layout-align>
 								<div flex="25" flex-md="20" flex-sm="10" flex-xs="5" layout layout-align="center center"><span class="header" style="font-size:calc(25px + 1vw);"><text class="dark-grey text">contact </text> <text class="red text">us</text></span></div>
@@ -122,7 +118,7 @@
 							</div>
 						</div>
 						<!-- landing footer -->
-						<div class="icon-label" style="background: rgba(244, 67, 54, .95)" flex-lg="20" flex-xl="20" flex-xs="25" flex-sm="25" flex-md="25" 
+						<div class="icon-label" style="background: rgba(244, 67, 54, .95)" flex-lg="20" flex-xl="20" flex-xs="25" flex-sm="25" flex-md="25"
 							layout="column" layout-align="start stretch">
 							<div flex layout="row" layout-align="center stretch">
 								<div flex="30" hide show-gt-sm flex></div>

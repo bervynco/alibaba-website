@@ -1,5 +1,5 @@
 var homeModule = angular.module('HomeModule', []);
-homeModule.controller('HomeController', function($location, $scope, $state, $window, DataFactory, HomeFactory, siteData, $mdDialog) {
+homeModule.controller('HomeController', function($location, $scope, $timeout, $interval, $state, $window, DataFactory, HomeFactory, siteData, $mdDialog) {
 	window.scroll(0, 0);
 
 	$scope.PageData = siteData;
@@ -9,8 +9,23 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 	$scope.GoToDrilldown = function(data, link) {
 		$state.go(link, data);
 	}
+	function setCurrentSlideIndex(index){
+		$scope.currentIndex = index;
+	}
+	$scope.isCurrentIndex = function(index){
+		return $scope.currentIndex === index;
+		// console.log(index);
+	}
 
-	console.log("CONTENT:", $scope.PageData[0].content[0]);
+	function nextSlide(){
+		$scope.currentIndex= ($scope.currentIndex < $scope.PageData[0].content[0].length - 1)? ++$scope.currentIndex: 0;
+		$timeout(nextSlide, 5000);
+	}
+	function loadSlide(){
+		$timeout(nextSlide, 200);
+	}
+	loadSlide();
+	// console.log("CONTENT:", $scope.PageData[0].content[0]);
 	// var sampCarousel = [{
 	// 	"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
 	// 	"image": "assets/img/logo/default/placeholder.png",
@@ -20,6 +35,9 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 	// 	"image": "assets/img/logo/default/placeholder.png",
 	// 	"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
 	// }];
+	//
+
+
 
     $scope.OpenContact = function(title, value, ev) {
         var input = {type:title, info: value};
@@ -39,7 +57,7 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
     }
 
 	$scope.EditTitle = function(title, ev) {
-		console.log(title);
+		// console.log(title);
 		$mdDialog.show({
 			parent: angular.element(document.body),
 			targetEvent: ev,
@@ -74,11 +92,11 @@ homeModule.controller('HomeController', function($location, $scope, $state, $win
 
 homeModule.controller('ProductsController', function($location, $scope, $state, $stateParams, $window, productsData, $mdDialog) {
 	$scope.DrilldownData = productsData[0];
-	console.log(productsData[0]);
+	// console.log(productsData[0]);
 	$scope.displayProduct = false;
 	$scope.Products = [];
 	$scope.ProductCategory = [];
-	
+
 	//Check Session Data
 	$scope.CheckSession();
 
@@ -104,15 +122,15 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 				overall_id: i.overall_id
 			});
 		});
-		
+
 		console.log($scope.ScreenDimension);
 		if($scope.ScreenDimension.innerWidth < 600)
 		{
 			$scope.Products = _.chunk(arr, 1);
-		}	
+		}
 		else{
 			$scope.Products = _.chunk(arr, 3);
-		}	
+		}
 	}
 
 	// Set Product Categories
@@ -158,7 +176,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 
 	function LoadPage() {
 		// GetProducts($scope.DrilldownData.body);
-		
+
 		GetProducts($scope.DrilldownData.body);
 		GetProductCategories($scope.DrilldownData.body);
 	}
@@ -170,6 +188,7 @@ homeModule.controller('ProcessController', function($location, $scope, $state, $
 	$scope.DrilldownData = processData[0];
 	//Check Session Data
 	$scope.CheckSession();
+	console.log($scope.DrilldownData);
 });
 
 homeModule.controller('VisionController', function($location, $scope, $state, $stateParams, $window, visionData, $mdDialog) {

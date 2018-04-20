@@ -212,6 +212,10 @@ colors
     text-align: center;
 }
 
+.section-overview-carousel {
+	background: center center no-repeat;
+	background-size: cover;
+}
 /*about*/
 
 .section-about {
@@ -699,7 +703,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* login */
 .login-panel {
-    height: 400px; 
+    height: 400px;
     background-color: rgba(225,225,225,0.5);
 }
 .login-panel > .login-header {
@@ -741,7 +745,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 .login-input > input[type='text']:focus, .login-input > input[type='password']:focus{
     border: none;
-    
+
     border-bottom: 3px solid rgba(125,125,125,1);
 }
 

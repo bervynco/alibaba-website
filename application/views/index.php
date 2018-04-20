@@ -50,11 +50,6 @@
     <!-- ANGULAR MATERIAL LIBRARY -->
     <script src="public/assets/lib/material/angular-material.min.js"></script>
 
-    <!-- JK CAROUSEL LIBRARY -->
-    <script src="public/assets/lib/carousel/jk-carousel.min.js"></script>
-    <script src="public/assets/lib/carousel/jk-carousel.min.css"></script>
-
-
 	<!-- JQUERY SCROLLBAR -->
 	<script src="public/assets/lib/jquery/jquery.scrollbar.min.js"></script>
 

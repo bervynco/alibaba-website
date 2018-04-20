@@ -12,21 +12,21 @@
             <div class="body" flex layout="column" layout-align>
                 <div class="process-list" flex layout layout-align>
                     <md-grid-list class="process" flex layout layout-align class md-cols-xs="1" md-cols-sm="2" md-cols-md="2" md-cols-gt-md="2" md-cols-lg="2" md-cols="4" md-row-height="500px" md-gutter="10px">
-                        <md-grid-tile ng-repeat="data in DrilldownData.body">
+                        <md-grid-tile ng-repeat="(key, value) in DrilldownData.body">
                             <div class="process-content" flex layout="column" layout-align>
                                 <div class="title" flex="5" layout layout-align>
                                     <div class="indicator" flex="20" layout layout-align="center center"><span>step {{$index+1}}</span></div>
-                                    <div class="text" flex layout layout-align="start center"><span>{{data.name}}</span></div>
+                                    <div class="text" flex layout layout-align="start center"><span>{{value.name}}</span></div>
                                 </div>
                                 <div flex="5"></div>
-                                <div class=" description scroll" flex="15" layout layout-align ng-if="data.description.length != 0"><span>{{data.description}}</span></div>
+                                <div class=" description scroll" flex="15" layout layout-align ng-if="value.description.length>0"><span>{{value.description}}</span></div>
                                 <div class="process-body" flex layout="column" layout-align>
                                     <div class="wrapper" flex layout="column" layout-align>
                                         <div class="scroll">
-                                            <div class="process-item" layout layout-align ng-repeat="step in data.steps" layout-padding>
-                                                <div class="thumbnail" flex layout layout-align ng-style="{'background-image': 'url({{step.image}})'}"  ng-if="step.image.length != 0"></div>
+                                            <div class="process-item" layout layout-align ng-repeat="step in value.steps" layout-padding>
+                                                <div class="thumbnail" flex layout layout-align ng-style="{'background-image': 'url(public/{{step.image}})'}"  ng-if="step.image.length != 0"></div>
                                                 <div class="content" flex layout="column" layout-align>
-                                                    <div class="title" flex="10" layout layout-align ng-if="step.name.length != 0"><span>{{step.name}}</span></div>
+                                                    <div class="title" flex="15" layout layout-align ng-if="step.name.length != 0"><span>{{step.name}}</span></div>
                                                     <div class="description" flex layout="column" layout-align>
                                                         <div class="text scroll" flex layout layout-align ng-if="step.description.length != 0"><span>{{step.description}}</span></div>
                                                         <div class="bullet" flex layout="column" layout-align ng-if="data.sub.length != 0" ng-repeat="bullet in step.sub">
