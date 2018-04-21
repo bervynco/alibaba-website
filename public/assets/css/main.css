@@ -214,7 +214,7 @@ colors
 
 .section-overview-carousel {
 	background: center center no-repeat;
-	background-size: cover;
+	background-size: contain;
 }
 /*about*/
 

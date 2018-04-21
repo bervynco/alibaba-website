@@ -23,7 +23,7 @@ homeModule.service('HomeService', function($http, $window) {
     this.GetData = function() {
         return $http({
             url: "index.php/SiteController/getAllSiteData",
-            // url: "api/sitedata.json",
+            // url: "public/api/sitedata.json",
             method: 'GET'
         });
     }

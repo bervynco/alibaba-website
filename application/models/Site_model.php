@@ -18,7 +18,7 @@ class site_model extends CI_Model {
     }
     
     function selectContentData($id){
-        $query = $this->db->select(array('id', 'overall_id', 'title', 'link'))->where('overall_id', $id)->get('content');
+        $query = $this->db->select(array('id', 'overall_id', 'title', 'link', 'image'))->where('overall_id', $id)->get('content');
         return($query->num_rows() > 0) ? $query->result_array(): array();
     }
 
@@ -53,9 +53,16 @@ class site_model extends CI_Model {
         // $query = $this->db->select(array('step.id', 'step.name', 'step.description', 'step.image', 'sub.id', 'sub.detail'))
         //                 ->join('sub', 'step.id = sub.step_id')
         //                 ->get('step');
+        // echo $overallID; 
+        // echo '<br>';
+        // echo $contentID;
+        // echo '<br>';
+        // echo $bodyID;
+        // echo '<br><br>';
         $query = $this->db->select(array('id', 'overall_id', 'content_id', 'body_id', 'name', 'description', 'image', 'sub'))
                  ->where('overall_id', $overallID)
                  ->where('content_id', $contentID)
+                 ->where('body_id', $bodyID)
                  ->get('step');
         return($query->num_rows() > 0) ? $query->result_array(): array();
     }

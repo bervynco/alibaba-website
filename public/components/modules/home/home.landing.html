@@ -14,7 +14,9 @@
 								<md-button class="md-raised" hide show-sm show-xs show-md flex ng-click="EditTitle(PageData[0].content[0], $event)"> <i class="fa fa-edit"></i> </md-button>
 							</div>
 						</div>
-						<div class="section-overview-carousel" flex layout layout-align  ng-repeat="data in PageData[0].content[0]" ng-if="isCurrentIndex($index)" ng-style="{'background-image': 'url({{data.image}})'}">
+						<!--ng-style="{'background-image': 'url(public/assets/img/bg/others/homepage.jpg)'}"-->
+						<div class="section-overview-carousel" flex layout layout-align  ng-repeat="data in PageData[0].content[0]" ng-if="isCurrentIndex($index)" 
+						>
 							<div flex="30" flex-md="25" flex-sm="5" flex-xs="0"></div>
 							<div flex layout="column" layout-align>
 								<div class="" flex layout="column" layout-align="center center">
@@ -42,7 +44,8 @@
 						<div flex layout-sm="row" layout-xs="column" layout layout-align layout-padding>
 							<div flex="20" flex-md="5" flex-sm="10" flex-xs="0"></div>
 							<div flex layout layout-align ng-repeat="x in PageData[1].content track by $index">
-								<div class="box-container" flex layout="column" layout-align  ng-style="{'background-image': 'url({{aboutImages[$index]}})'}">
+								
+								<div class="box-container" flex layout="column" layout-align  ng-style="{'background-image': 'url({{x.image}})'}">
 									<div class="" flex layout layout-align></div>
 									<div class="title dark-grey text" flex="20" flex-sm="30" flex-xs="40" layout layout-align="center center" ng-click="GoToDrilldown(x,x.link)"><span>{{x.title}}</span></div>
 								</div>

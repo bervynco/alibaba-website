@@ -23,7 +23,7 @@
                                 <div class="process-body" flex layout="column" layout-align>
                                     <div class="wrapper" flex layout="column" layout-align>
                                         <div class="scroll">
-                                            <div class="process-item" layout layout-align ng-repeat="step in value.steps" layout-padding>
+                                            <div class="process-item" layout layout-align ng-repeat="step in value.steps " layout-padding>
                                                 <div class="thumbnail" flex layout layout-align ng-style="{'background-image': 'url(public/{{step.image}})'}"  ng-if="step.image.length != 0"></div>
                                                 <div class="content" flex layout="column" layout-align>
                                                     <div class="title" flex="15" layout layout-align ng-if="step.name.length != 0"><span>{{step.name}}</span></div>

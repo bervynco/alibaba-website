@@ -3,6 +3,7 @@ homeModule.controller('HomeController', function($location, $scope, $timeout, $i
 	window.scroll(0, 0);
 
 	$scope.PageData = siteData;
+	console.log($scope.PageData[1]);
 	//Check Session Data
 	$scope.CheckSession();
 	//Drilldown
@@ -17,7 +18,7 @@ homeModule.controller('HomeController', function($location, $scope, $timeout, $i
 		// console.log(index);
 	}
 
-	$scope.aboutImages = ['public/assets/img/bg/others/homepage.jpg','public/assets/img/bg/others/about-vision.jpg','public/assets/img/bg/others/about-process.jpg'];
+	// $scope.aboutImages = ['public/assets/img/bg/others/homepage.jpg','public/assets/img/bg/others/about-vision.jpg','public/assets/img/bg/others/about-process.jpg'];
 
 	function nextSlide(){
 		$scope.currentIndex= ($scope.currentIndex < $scope.PageData[0].content[0].length - 1)? ++$scope.currentIndex: 0;
@@ -27,19 +28,6 @@ homeModule.controller('HomeController', function($location, $scope, $timeout, $i
 		$timeout(nextSlide, 200);
 	}
 	loadSlide();
-	console.log("CONTENT:", $scope.PageData);
-	// var sampCarousel = [{
-	// 	"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
-	// 	"image": "assets/img/logo/default/placeholder.png",
-	// 	"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
-	// }, {
-	// 	"body": "Our company Frank and David Food Manufacturing Corporation is the maker of “Alibaba” Brand Corn chips and “Bawang na Bawang (BNB) Cornick and Green Peas.",
-	// 	"image": "assets/img/logo/default/placeholder.png",
-	// 	"title": "FRANK AND DAVID FOOD MANUFACTURING CORPORATION"
-	// }];
-	//
-
-
 
     $scope.OpenContact = function(title, value, ev) {
         var input = {type:title, info: value};
@@ -190,7 +178,7 @@ homeModule.controller('ProcessController', function($location, $scope, $state, $
 	$scope.DrilldownData = processData[0];
 	//Check Session Data
 	$scope.CheckSession();
-	console.log($scope.DrilldownData);
+	console.log("DRILLDOWN DATA: ", $scope.DrilldownData);
 });
 
 homeModule.controller('VisionController', function($location, $scope, $state, $stateParams, $window, visionData, $mdDialog) {

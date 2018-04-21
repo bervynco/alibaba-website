@@ -21,8 +21,8 @@ class SiteController extends CI_Controller
         return array('section' => $section, 'content' => array($data));
     }
 
-    public function createAboutReturnArray($name, $link, $data, $id, $overallID){
-        return array('title' => $name, 'link' => $link, 'body' => $data, 'id' => $id,  'overall_id' => $overallID);
+    public function createAboutReturnArray($name, $link, $data, $id, $overallID, $image){
+        return array('title' => $name, 'link' => $link, 'body' => $data, 'id' => $id,  'overall_id' => $overallID, 'image' => $image);
     }
 
     public function objectToArray($data){
@@ -39,8 +39,7 @@ class SiteController extends CI_Controller
                             $this->site_model->selectContactData($arrOverallDetail['contact_id']));
         
         $arrContentDetail = $this->site_model->selectContentData($arrOverallDetail['id']);
-        // print_r($arrContentDetail);
-        // echo '<br>';
+
         $productIndex = array_search('products', array_column($arrContentDetail, 'link'));
         $visionIndex = array_search('vision', array_column($arrContentDetail, 'link'));
         $processIndex = array_search('process', array_column($arrContentDetail, 'link'));
@@ -50,7 +49,8 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$productIndex]['link'],
                             $this->site_model->selectProductData($arrOverallDetail['id'], $arrContentDetail[$productIndex]['id']),
                             $productIndex + 1,
-                            $arrContentDetail[$productIndex]['overall_id']
+                            $arrContentDetail[$productIndex]['overall_id'],
+                            $arrContentDetail[$productIndex]['image']
         );
 
         $arrVision = $this->createAboutReturnArray(
@@ -58,20 +58,30 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$visionIndex]['link'],
                             $this->site_model->selectVisionData($arrOverallDetail['id'], $arrContentDetail[$visionIndex]['id']),
                             $visionIndex + 1,
-                            $arrContentDetail[$visionIndex]['overall_id']
+                            $arrContentDetail[$visionIndex]['overall_id'],
+                            $arrContentDetail[$visionIndex]['image']
         );
         
         $arrProcess = $this->site_model->selectProcessData($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id']);
         
         foreach($arrProcess as $index => $row){
-            $arrProcess[$index]['steps'] = $this->site_model->selectProcessDetail($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id'], $row['id']);
+            $processData = $this->site_model->selectProcessDetail($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id'], $row['id']);
+
+            foreach($processData as $indexProcess => $processRow){
+                // echo json_encode($processRow);
+                $processData[$indexProcess]['sub'] = json_decode(json_decode(json_encode($processData[$indexProcess]['sub']), true));
+                
+            }
+            $arrProcess[$index]['steps'] = $processData;
+            
         }
         $arrNewProcess = $this->createAboutReturnArray(
                             $arrContentDetail[$processIndex]['title'],
                             $arrContentDetail[$processIndex]['link'],
                             $arrProcess,
                             $processIndex + 1,
-                            $arrContentDetail[$processIndex]['overall_id']
+                            $arrContentDetail[$processIndex]['overall_id'],
+                            $arrContentDetail[$processIndex]['image']
         );
         $aboutDetail = array();
         array_push($aboutDetail, $arrProducts);

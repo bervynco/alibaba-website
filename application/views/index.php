@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Alibaba</title>
-	<link rel="shortcut icon" type="image/png" href="/assets/img/logo/client/client-logo.jpg" sizes="16x16" />
+	<link rel="shortcut icon" type="image/png" href="public/assets/img/logo/client/client-logo.png" sizes="16x16" />
 	<!-------------------------------------------------------------------------------------->
 	<!-------------------------------------    CUSTOM    ----------------------------------->
 	<!-------------------------------------------------------------------------------------->
