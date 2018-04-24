@@ -42,7 +42,7 @@ class SiteController extends CI_Controller
 
         $productIndex = array_search('products', array_column($arrContentDetail, 'link'));
         $visionIndex = array_search('vision', array_column($arrContentDetail, 'link'));
-        $processIndex = array_search('process', array_column($arrContentDetail, 'link'));
+        // $processIndex = array_search('process', array_column($arrContentDetail, 'link'));
 
         $arrProducts = $this->createAboutReturnArray(
                             $arrContentDetail[$productIndex]['title'],
@@ -62,31 +62,31 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$visionIndex]['image']
         );
         
-        $arrProcess = $this->site_model->selectProcessData($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id']);
+        // $arrProcess = $this->site_model->selectProcessData($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id']);
         
-        foreach($arrProcess as $index => $row){
-            $processData = $this->site_model->selectProcessDetail($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id'], $row['id']);
+        // foreach($arrProcess as $index => $row){
+        //     $processData = $this->site_model->selectProcessDetail($arrOverallDetail['id'], $arrContentDetail[$processIndex]['id'], $row['id']);
 
-            foreach($processData as $indexProcess => $processRow){
-                // echo json_encode($processRow);
-                $processData[$indexProcess]['sub'] = json_decode(json_decode(json_encode($processData[$indexProcess]['sub']), true));
+        //     foreach($processData as $indexProcess => $processRow){
+        //         // echo json_encode($processRow);
+        //         $processData[$indexProcess]['sub'] = json_decode(json_decode(json_encode($processData[$indexProcess]['sub']), true));
                 
-            }
-            $arrProcess[$index]['steps'] = $processData;
+        //     }
+        //     $arrProcess[$index]['steps'] = $processData;
             
-        }
-        $arrNewProcess = $this->createAboutReturnArray(
-                            $arrContentDetail[$processIndex]['title'],
-                            $arrContentDetail[$processIndex]['link'],
-                            $arrProcess,
-                            $processIndex + 1,
-                            $arrContentDetail[$processIndex]['overall_id'],
-                            $arrContentDetail[$processIndex]['image']
-        );
+        // }
+        // $arrNewProcess = $this->createAboutReturnArray(
+        //                     $arrContentDetail[$processIndex]['title'],
+        //                     $arrContentDetail[$processIndex]['link'],
+        //                     $arrProcess,
+        //                     $processIndex + 1,
+        //                     $arrContentDetail[$processIndex]['overall_id'],
+        //                     $arrContentDetail[$processIndex]['image']
+        // );
         $aboutDetail = array();
         array_push($aboutDetail, $arrProducts);
         array_push($aboutDetail, $arrVision);
-        array_push($aboutDetail, $arrNewProcess);
+        // array_push($aboutDetail, $arrNewProcess);
 
         $arrAboutDetail = array('section' => 'about', 'content' => $aboutDetail);
         array_push($siteData, $arrHomeDetail);

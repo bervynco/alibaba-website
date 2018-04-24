@@ -3,6 +3,11 @@ homeModule.controller('HomeController', function($location, $scope, $timeout, $i
 	window.scroll(0, 0);
 
 	$scope.PageData = siteData;
+	$scope.contact  = {
+		"name": "",
+		"email": "",
+		"message": ""
+	}
 	console.log($scope.PageData[1]);
 	//Check Session Data
 	$scope.CheckSession();
@@ -29,6 +34,14 @@ homeModule.controller('HomeController', function($location, $scope, $timeout, $i
 	}
 	loadSlide();
 
+	$scope.ContactMe = function(){
+		
+		DataFactory.ContactForm($scope.contact).success(function(response){
+
+		}).error(function(error){
+
+		});
+	}
     $scope.OpenContact = function(title, value, ev) {
         var input = {type:title, info: value};
         $mdDialog.show({
@@ -174,12 +187,12 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	LoadPage();
 });
 
-homeModule.controller('ProcessController', function($location, $scope, $state, $stateParams, $window, processData) {
-	$scope.DrilldownData = processData[0];
-	//Check Session Data
-	$scope.CheckSession();
-	console.log("DRILLDOWN DATA: ", $scope.DrilldownData);
-});
+// homeModule.controller('ProcessController', function($location, $scope, $state, $stateParams, $window, processData) {
+// 	$scope.DrilldownData = processData[0];
+// 	//Check Session Data
+// 	$scope.CheckSession();
+// 	console.log("DRILLDOWN DATA: ", $scope.DrilldownData);
+// });
 
 homeModule.controller('VisionController', function($location, $scope, $state, $stateParams, $window, visionData, $mdDialog) {
 	//Check Session Data

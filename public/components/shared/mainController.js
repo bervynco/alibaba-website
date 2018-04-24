@@ -75,6 +75,14 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
     //NAVIGATION
     $scope.ChangeState = function(state) {
         $state.go(state);
+        
+        var el = $("div.toggle-navbar.hidden");
+        if (el.length == 0) {
+            el = $("div.toggle-navbar");
+            el.addClass("hidden");
+        } else {
+            el.removeClass("hidden");
+        }
     }
 
     //
@@ -96,6 +104,14 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
             // $timeout(function(){$location.hash(elementId);},100);
         } else {
             $timeout(function(){$anchorScroll();},100);
+        }
+
+        var el = $("div.toggle-navbar.hidden");
+        if (el.length == 0) {
+            el = $("div.toggle-navbar");
+            el.addClass("hidden");
+        } else {
+            el.removeClass("hidden");
         }
     };
 

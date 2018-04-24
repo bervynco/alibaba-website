@@ -84,10 +84,18 @@ app.factory('DataFactory', function ($http) {
             });
         },
         SignOut: function(){
-             return $http({
+            return $http({
                 url: "index.php/UserController/signOut",
                 method: 'POST',
                 cache: false
+            });
+        },
+        ContactForm: function(contact){
+            return $http({
+                url: "index.php/EmailController/sendEmail",
+                method: 'POST',
+                cache: false,
+                data: contact
             });
         }
     }
