@@ -198,6 +198,7 @@ homeModule.controller('VisionController', function($location, $scope, $state, $s
 	//Check Session Data
 	$scope.CheckSession();
 	$scope.DrilldownData = visionData[0];
+	console.log($scope.DrilldownData);
 	$scope.EditVisionMissionData = function(data, ev) {
 		$mdDialog.show({
 			parent: angular.element(document.body),

@@ -42,6 +42,7 @@ class SiteController extends CI_Controller
 
         $productIndex = array_search('products', array_column($arrContentDetail, 'link'));
         $visionIndex = array_search('vision', array_column($arrContentDetail, 'link'));
+
         // $processIndex = array_search('process', array_column($arrContentDetail, 'link'));
 
         $arrProducts = $this->createAboutReturnArray(
@@ -52,7 +53,6 @@ class SiteController extends CI_Controller
                             $arrContentDetail[$productIndex]['overall_id'],
                             $arrContentDetail[$productIndex]['image']
         );
-
         $arrVision = $this->createAboutReturnArray(
                             $arrContentDetail[$visionIndex]['title'],
                             $arrContentDetail[$visionIndex]['link'],
