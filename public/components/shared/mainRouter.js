@@ -59,19 +59,19 @@ mainRouter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvi
 				}]
 			}
 		})
-		.state("process", {
-			name: "process",
-			parent: "site",
-			data: {},
-			url: "/home/process",
-			templateUrl: "public/components/modules/home/home.process.html",
-			controller: "ProcessController",
-			resolve: {
-				processData: ["DrilldownFactory", function(DrilldownFactory){
-					return DrilldownFactory.getData('process');
-				}]
-			}
-		})
+		// .state("process", {
+		// 	name: "process",
+		// 	parent: "site",
+		// 	data: {},
+		// 	url: "/home/process",
+		// 	templateUrl: "public/components/modules/home/home.process.html",
+		// 	controller: "ProcessController",
+		// 	resolve: {
+		// 		processData: ["DrilldownFactory", function(DrilldownFactory){
+		// 			return DrilldownFactory.getData('process');
+		// 		}]
+		// 	}
+		// })
 		.state("vision", {
 			name: "vision",
 			parent: "site",
