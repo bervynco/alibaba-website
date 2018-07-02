@@ -8,7 +8,7 @@
                         style="height: 100%; font-size: calc(14px + 1vw); color: rgba(255,255,255,1); font-weight: bolder; letter-spacing: .25vw; text-transform: uppercase;" 
                         layout layout-align="center center" layout-padding>
                         {{DrilldownData.title}}
-                        <span ng-if="user != null">
+                        <span ng-if="session != null">
                             <md-button class="md-raised" hide show-gt-md flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button>
                             <md-button class="md-raised" hide show-md show-sm show-xs flex ng-click="EditProducts(DrilldownData, $event)"> <i class="fa fa-edit"></i> </md-button>
                             <!-- <md-button class="md-raised" flex ng-click="EditProducts(DrilldownData, $event)"> Edit Content </md-button> -->

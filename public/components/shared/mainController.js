@@ -74,8 +74,21 @@ app.controller('MainController', function($anchorScroll, $scope, $location, $sta
 
     //NAVIGATION
     $scope.ChangeState = function(state) {
+        console.log(state);
+        // if(state == 'login'){
+        //     $scope.session = localStorage.getItem("user");
+        //     if($scope.session == null){
+        //         $scope.session = null;
+        //         localStorage.removeItem("user");
+        //         setTimeout(function(){ 
+        //             $window.location.reload();
+        //         }, 500);
+        //     }
+        // }
+        // else {
+            
+        // }
         $state.go(state);
-        
         var el = $("div.toggle-navbar.hidden");
         if (el.length == 0) {
             el = $("div.toggle-navbar");

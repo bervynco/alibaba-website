@@ -152,11 +152,14 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	// Sort Viewable Products
 	$scope.SelectedProductCategory = 'all';
 	$scope.SetSelectedProductCategory = function(category) {
+		var sample = $scope.DrilldownData.body;
 		$scope.SelectedProductCategory = category;
 		// var arr = (category=='all')?$scope.DrilldownData.body: _.filter($scope.DrilldownData.body, { 'category': category});
 		var arr = (category == 'all') ? sample : _.filter(sample, {
 			'category': category
 		});
+
+		console.log(arr);
 		GetProducts(arr);
 	}
 
