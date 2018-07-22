@@ -479,6 +479,14 @@ input.filter-input:focus {
 .product-preview-wrapper {
     background: rgba(0,0,0,.065);
 }
+.product-label {
+    background-color: rgba(20,20,20,0.15); 
+    height: 70px; 
+    color: rgba(245,245,245,1);
+    text-transform: uppercase;
+    padding:5px;
+    font-size: calc(10px + .15vw);
+}
 .product-cat--header {
     font-size: calc(18px + .2vw);
     font-weight: bolder;

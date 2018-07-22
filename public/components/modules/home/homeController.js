@@ -116,13 +116,15 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	function GetProducts(obj) {
 		var arr = [];
 		_.forEach(obj, function(i, k) {
+			console.log(i,k);
 			arr.push({
 				category: i.category, // set category here - nothing specified yet
 				content_id: i.content_id,
 				description: i.description,
 				id: i.id,
+				name: i.name,
 				image: 'public/' + i.image,
-				overall_id: i.overall_id
+				overall_id: i.overall_id,
 			});
 		});
 

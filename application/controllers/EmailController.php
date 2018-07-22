@@ -6,44 +6,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class EmailController extends CI_Controller
 {
     public function sendEmail(){
-        $this->load->library("phpmailer_library");
+        $this->load->library("Phpmailer_library");
+        $postData = json_decode(file_get_contents('php://input'), true);
+        
         $mail = $this->phpmailer_library->load();
         $mail->isSMTP();
-        //Enable SMTP debugging
-        // 0 = off (for production use)
-        // 1 = client messages
-        // 2 = client and server messages
-        $mail->SMTPDebug = 2;
+        $mail->SMTPDebug = 0;
         //Set the hostname of the mail server
-        $mail->Host = 'smtp.mail.yahoo.com.';
-        // use
-        // $mail->Host = gethostbyname('smtp.gmail.com');
-        // if your network does not support SMTP over IPv6
-        //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-        $mail->Port = 465;
+        $mail->Host = 'smtp.gmail.com.';
+        $mail->Port = 587;
         //Set the encryption system to use - ssl (deprecated) or tls
         $mail->SMTPSecure = 'tls';
         //Whether to use SMTP authentication
         $mail->SMTPAuth = true;
         //Username to use for SMTP authentication - use full email address for gmail
-        // $mail->Username = "username@gmail.com";
+        $mail->Username = "cbsnoreplygeneric@gmail.com";
         // //Password to use for SMTP authentication
-        // $mail->Password = "yourpassword";
+        $mail->Password = "123cbs123";
         //Set who the message is to be sent from
-        $mail->setFrom('from@example.com', 'First Last');
-        //Set an alternative reply-to address
-        $mail->addReplyTo('bervyn_co2010@yahoo.com', 'First Last');
+        $mail->setFrom('cbsnoreplygeneric@gmail.com', 'Website Inquiry');
         //Set who the message is to be sent to
-        $mail->addAddress('bervyn_co2010@yahoo.com', 'First Last');
-        //Set who the message is to be sent to
-        $mail->addAddress('whoto@example.com', 'John Doe');
+        $mail->addAddress('fdsf_faam@yahoo.com', 'Frank and David Snack Food Corporation');
+        $mail->addCc($postData['email'], $postData['name']);
+        $mail->addBcc('bervyn_co2010@yahoo.com', "Bervyn Co");
         //Set the subject line
-        $mail->Subject = 'PHPMailer GMail SMTP test';
+        $mail->Subject = 'An Email from alibabachips.com';
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
-        $mail->msgHTML('Hello World');
-        //Replace the plain text body with one created manually
-        $mail->AltBody = 'This is a plain-text message body';
+        $mail->msgHTML($postData['message']);
         //send the message, check for errors
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
