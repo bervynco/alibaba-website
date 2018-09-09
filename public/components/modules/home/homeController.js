@@ -116,7 +116,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 	function GetProducts(obj) {
 		var arr = [];
 		_.forEach(obj, function(i, k) {
-			console.log(i,k);
+			// console.log(i,k);
 			arr.push({
 				category: i.category, // set category here - nothing specified yet
 				content_id: i.content_id,
@@ -128,7 +128,7 @@ homeModule.controller('ProductsController', function($location, $scope, $state, 
 			});
 		});
 
-		console.log($scope.ScreenDimension);
+		// console.log($scope.ScreenDimension);
 		if($scope.ScreenDimension.innerWidth < 600)
 		{
 			$scope.Products = _.chunk(arr, 1);

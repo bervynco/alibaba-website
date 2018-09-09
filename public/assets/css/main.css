@@ -163,7 +163,62 @@ colors
     position: relative;
     top: 80px;
 }
+/*slideshow */
+.section-slideshow {
+    position: relative;
+    height: 300px;
+    background-attachment: fixed;
+    background-blend-mode: color-dodge;
+    /* background-image: url(../img/logo/default/placeholder.png); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+.section-slideshow.layer-wrapper {
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    /* background: rgba(244, 67, 54, .85); */
+    height: 100%;
+    width: 100%;
+}
+
+.section-slideshow.layer-content {
+    background: transparent;
+    height: 100%;
+}
+
+.section-slideshow.layer-content span.header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2vw;
+    font-size: calc(25px + .2vw);
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.section-slideshow.layer-content .placeholder-img {
+    background-blend-mode: color-dodge;
+    background-image: url(../img/logo/default/placeholder.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-slideshow.layer-content span.subheader {
+    color: rgba(255, 255, 255, .75);
+    font-size: calc(16px + .2vw);
+    text-align: center;
+}
+
+.section-slideshow-carousel {
+	background: center center no-repeat;
+	background-size: contain;
+}
+
+
+
+/* end of slideshow */
 /*overview*/
 
 .section-overview {
@@ -770,7 +825,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: bold;
 }
 .website-footer-details {
-    font-size: calc(10px + .25vw);
+    font-size: calc(8px + .25vw);
     font-weight: bold;
     color: white
 }

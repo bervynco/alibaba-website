@@ -98,10 +98,7 @@ class SiteController extends CI_Controller
 
     public function updateTitleInfo(){
         $postData = json_decode(file_get_contents('php://input'), true);
-        print_r($postData);
         $truncateResponse = $this->site_model->truncateTable('home');
-        print_r($truncateResponse);
-
         if($truncateResponse){
             foreach($postData as $index => $titleContent){
                 $insertRows = $this->site_model->insertTitle($titleContent);
