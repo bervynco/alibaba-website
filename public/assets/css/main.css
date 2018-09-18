@@ -166,7 +166,7 @@ colors
 /*slideshow */
 .section-slideshow {
     position: relative;
-    height: 300px;
+    height: 600px;
     background-attachment: fixed;
     background-blend-mode: color-dodge;
     /* background-image: url(../img/logo/default/placeholder.png); */
@@ -175,10 +175,36 @@ colors
     background-size: cover;
 }
 
-.section-slideshow.layer-wrapper {
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-container > .slide-images {
+    /* width: 500px; */
+}
+
+.slideshow-container > .slide-images > img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* .section-slideshow.layer-wrapper {
     position: absolute;
     background: rgba(255, 255, 255, 1);
-    /* background: rgba(244, 67, 54, .85); */
     height: 100%;
     width: 100%;
 }
@@ -214,7 +240,7 @@ colors
 .section-slideshow-carousel {
 	background: center center no-repeat;
 	background-size: contain;
-}
+} */
 
 
 
