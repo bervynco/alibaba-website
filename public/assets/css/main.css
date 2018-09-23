@@ -166,7 +166,7 @@ colors
 /*slideshow */
 .section-slideshow {
     position: relative;
-    height: 600px;
+    /* height: calc(800px + 0.5vw); */
     background-attachment: fixed;
     background-blend-mode: color-dodge;
     /* background-image: url(../img/logo/default/placeholder.png); */
@@ -178,18 +178,117 @@ colors
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  /* max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: auto; */
 }
 
 .slideshow-container > .slide-images {
     /* width: 500px; */
 }
 
-.slideshow-container > .slide-images > img{
-    max-height: 100%;
-    max-width: 100%;
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:1000px;
+        width: auto;
+        height: auto;
+    }
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:1000px;
+        width: auto;
+        height: auto;
+    }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:850px;
+        width: auto;
+        height: auto;
+    }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:850px;
+        width: auto;
+        height: auto;
+    }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:850px;
+        width: auto;
+        height: auto;
+    }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .slideshow-container > .slide-images > img{
+        display: block;
+        max-width:100%;
+        max-height:850px;
+        width: auto;
+        height: auto;
+    }
+  
 }
 
 @-webkit-keyframes fade {
